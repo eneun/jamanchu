@@ -1,1 +1,8 @@
-메인페이지
+{% extends 'base.html' %}
+{% block content %}
+<h2>home/index 페이지</h2>
+
+<a href="{% url 'second' %}">home/second로 이동</a>
+<a href="{% url 'listpage' %}">meeting/listpage로 이동</a>
+
+{% endblock %}

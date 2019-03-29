@@ -14,10 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 import home.views
+import meeting.views
 
 urlpatterns = [
+    # 관리자 페이지
     path('admin/', admin.site.urls),
+    # 메인 페이지
     path('', home.views.index, name="index"),
+    # home 앱
+    path('home/', include('home.urls')),
+    # meeting 앱
+    path('meeting/', include('meeting.urls')),
 ]
