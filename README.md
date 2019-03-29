@@ -10,7 +10,7 @@
 6. 서버를 실행해보세요.($ python manage.py runserver)
 
 # 최예은 진행 상황
-3/28 django project 업로드
-3/29 home, meeting 앱 제작
-3/30 meeting 앱 내에 meeting 모델 제작
-3/30 meeting 앱 crud중 r 구현(detail.html)
+1. 3/28 django project 업로드
+2. 3/29 home, meeting 앱 제작
+3. 3/30 meeting 앱 내에 meeting 모델 제작
+4. 3/30 meeting 앱 crud중 r 구현(detail.html)
