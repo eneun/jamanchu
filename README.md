@@ -14,3 +14,4 @@
 2. 3/29 home, meeting 앱 제작
 3. 3/30 meeting 앱 내에 meeting 모델 제작
 4. 3/30 meeting 앱 crud중 r 구현(detail.html)
+5. 4/7 meeting 앱 c 구현(new.html) ModelForm이나 Form 사용하고 싶었으나 오류남.
