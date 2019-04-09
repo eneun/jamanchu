@@ -1,5 +1,5 @@
-# jamanchu
-시종설 자만추
+# zamanchu
+시종설 심심한사람들 - 자만추
 
 ## 다운로드 및 실행
 1. 폴더를 만드시고 폴더 안에 download zip 또는 git clone <이 repo의 주소>를 입력해서 다운받기
