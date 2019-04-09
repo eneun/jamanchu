@@ -16,3 +16,4 @@
 4. 3/30 meeting 앱 crud중 r 구현(detail.html)
 5. 4/7 meeting 앱 c 구현(new.html) ModelForm이나 Form 사용하고 싶었으나 오류남.
 6. 4/8 static 폴더 만들고 collectstatic 실행
+7. 부트스트랩 CDN 등록
