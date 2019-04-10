@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>회원가입 페이지</h1>
+
+{% if error %}
+    {{ error }}
+    <br/><br/>
+{% endif %}
+
+<form method="POST" action="{% url 'signup' %}">
+    {% csrf_token %}
+    Username: 
+    <br/>
+    <input name="username" type="text" value="">
+    <br/>
+    Password:
+    <br/>
+    <input name="password1" type="password" value="">
+    <br/>
+    Confirm Password
+    <br/>
+    <input name="password2" type="password" value="">
+    <br/>
+    <input type="submit" class='btn btn-primary' value='회원가입!'>
+</form>
+
+{% endblock %}

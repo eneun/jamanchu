@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
     'meeting.apps.MeetingConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [

@@ -13,7 +13,16 @@
 </head>
 
 <h1>네비게이션 바가 올 부분</h1>
-
+{% if user.is_authenticated %}
+    환영합니다, {{ user.username }}님!
+    <a href="javascript:{document.getElementById('logout').submit()}">로그아웃</a>
+    <form id="logout" method="POST" action="{% url 'logout' %}">
+        {% csrf_token %} <input type="hidden" />
+    </form>
+{% else %}
+    <a href="{% url 'login' %}">로그인</a> <br/>
+    <a href="{% url 'signup' %}">회원가입</a> <br/>
+{% endif %}
 <div>
     {% block content %}
     {% endblock %}

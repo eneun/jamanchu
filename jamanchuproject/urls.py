@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 import home.views
 import meeting.views
+import accounts.views
 
 urlpatterns = [
     # 관리자 페이지
@@ -27,4 +28,6 @@ urlpatterns = [
     path('home/', include('home.urls')),
     # meeting 앱
     path('meeting/', include('meeting.urls')),
+    # accounts 앱
+    path('accounts/', include('accounts.urls')),
 ]
