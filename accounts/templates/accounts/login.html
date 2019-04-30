@@ -8,11 +8,14 @@
     <br/>
 {% endif %}
 
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'accounts/css/style.css' %}" />
+
 <h1>로그인 페이지</h1>
 
 <form action="{% url 'login' %}" method='POST'>
     {% csrf_token %}
-    Username: 
+    <p>Username: </p>
     <br/>
     <input name="username" type="text" value="">
     <br/>

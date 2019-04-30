@@ -11,17 +11,22 @@
 
 <form method="POST" action="{% url 'signup' %}">
     {% csrf_token %}
+    {{form}}
     Username: 
     <br/>
-    <input name="username" type="text" value="">
+    <input name="username" type="text" value="" required='true'>
     <br/>
     Password:
     <br/>
-    <input name="password1" type="password" value="">
+    <input name="password1" type="password" value="" required='true'>
     <br/>
     Confirm Password
     <br/>
-    <input name="password2" type="password" value="">
+    <input name="password2" type="password" value="" required='true'>
+    <br/>
+    Email: 
+    <br/>
+    <input name="email" type="email" value="" required='true'>
     <br/>
     <input type="submit" class='btn btn-primary' value='회원가입!'>
 </form>
