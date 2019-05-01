@@ -19,3 +19,4 @@
 7. 4/9 부트스트랩 CDN 등록
 8. 4/10 accounts 앱 생성, 로그인/로그아웃/회원가입 구현
 9. 4/30 profiles 앱 생성, user와 one-to-one 연결 시도중
+10. 5/2 meeting 앱 c,r 백엔드 완성
