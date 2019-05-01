@@ -30,9 +30,24 @@ from .models import Meeting
 
 
 # 모델폼
-# class MeetingPost(forms.ModelForm):
-#     class Meta:
-#         model = Meeting
-#         # fields = ['title', 'body', 'date', 'start_time', 'end_time']
-#         # fields = ['title']
-#         fields = '__all__'
+class MeetingForm(forms.ModelForm):
+    class Meta:
+        model = Meeting
+        # fields = ['title', 'body', 'date', 'start_time', 'end_time']
+        # fields = ['title']
+        fields = '__all__'
+        widgets = {
+            'title': forms.TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': '제목을 입력하세요.',
+                }
+            ),
+            'body': forms.Textarea(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': '내용을 입력하세요.',
+                }
+            )
+            # 'end_time': DateTimeWidget(),
+        }

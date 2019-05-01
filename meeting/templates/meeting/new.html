@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2>meeting/new 페이지</h2>
-{% comment %} <form method="POST">
+<form method="POST">
     {% csrf_token %}
-	    <table>
-            {{ form.as_table }}
-        </table>
+    <table>
+        {% comment %} {{ form.as_table }} {% endcomment %}
+    </table>
         {{ form.non_field_errors }}
         <div>
             {{ form.category.errors }}
@@ -39,10 +39,10 @@
         </div>
         
 	<input type="submit" value="제출하기">
-</form> {% endcomment %}
+</form>
 
 
-<form action="{% url 'create' %}">
+{% comment %} <form action="{% url 'create' %}">
     <h3>카테고리</h3>
     <input type="text" name="category">
     <br>
@@ -62,7 +62,7 @@
     <input type="time" name="end_time" value="14:00">
     <br/>
     <input type="submit" value="제출">
-</form>
+</form> {% endcomment %}
 
 <a href="{% url 'listpage' %}">돌아가기</a>
 
