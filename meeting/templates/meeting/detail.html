@@ -5,6 +5,7 @@
 <a href="{% url 'listpage' %}">listpage로 돌아가기</a>
 <h1>제목 : {{ meeting.title }}</h1>
 <h2>내용 : {{ meeting.body}}</h2>
+<p>카테고리 : {{ meeting.category }}</p>
 <p>날짜 : {{ meeting.date }}</p>
 <p>시작 시각 : {{ meeting.start_time }}</p>
 <p>종료 시각 : {{ meeting.end_time }}</p>

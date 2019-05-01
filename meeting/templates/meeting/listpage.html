@@ -5,9 +5,10 @@
 <a href="{% url 'index' %}">index로 돌아가기</a>
 <a href="{% url 'meetingcreate' %}">새 글 쓰기</a>
 {% for meeting in meetings.all %}
-    <h1>제목 : {{ meeting.title }}</h1>
-    <h2>내용 : {{ meeting.summary}}...<a href="{% url 'detail' meeting.id %}">더보기</a></h2>
+    <p>제목 : {{ meeting.title }}</p>
+    <p>내용 : {{ meeting.summary}}...<a href="{% url 'detail' meeting.id %}">더보기</a></p>
     <p>날짜 : {{ meeting.date }}</p>
+    <br/>
 {% endfor %}
 
 
