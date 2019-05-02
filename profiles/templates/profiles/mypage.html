@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+
 <h1>profiles/mypage.html</h1>
 
 {% if user.is_authenticated %}
@@ -6,6 +9,8 @@
         <p>이메일 : {{ user.profile.email }}</p>
         <p>한마디 : {{ user.profile.content }}</p>
     {% else %}
-        <p>프로필 작성하러 가기</p>
+        <a href="{% url 'profilecreate' %}">프로필 작성하러 가기</a>
     {% endif %}
 {% endif %}
+
+{% endblock %}

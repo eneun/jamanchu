@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'meeting.apps.MeetingConfig',
     'accounts.apps.AccountsConfig',
+    'profiles.apps.ProfilesConfig',
     'bootstrap4',
     'bootstrap_datepicker_plus',
 ]

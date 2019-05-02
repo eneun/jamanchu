@@ -1,0 +1,10 @@
+<h1>Profiles/new.html</h1>
+<a href="{% url 'mypage' %}">뒤로 가기</a>
+
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form }}
+    </table>
+    <input type='submit' value='등록'>
+</form>
