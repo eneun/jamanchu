@@ -6,8 +6,9 @@
 2. 만든 폴더 경로에서 VSCode에서 가상환경을 만들고($ python -m venv myvenv)
 3. 가상환경을 실행합($ source myvenv/Scripts/activate)
 4. 가상환경에 장고를 설치하고($ pip install django)
-5. 프로젝트 폴더로 이동($ cd jamanchu-master)
-6. 서버 실행($ python manage.py runserver)
+5. 가상환경에 부트스트랩 설치($ pip install django-bootstrap4)
+6. 프로젝트 폴더로 이동($ cd jamanchu-master)
+7. 서버 실행($ python manage.py runserver)
 
 ## 최예은 진행 상황
 1. 3/28 django project 업로드

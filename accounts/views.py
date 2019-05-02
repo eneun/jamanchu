@@ -14,7 +14,6 @@ def signup(request):
             except User.DoesNotExist:
                 user = User.objects.create_user(
                     request.POST['username'], password=request.POST['password1'])
-                # user = User.objects.get(email=request.POST['email'])
             auth.login(request, user)
             return redirect('index')
         else:
