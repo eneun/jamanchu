@@ -22,6 +22,7 @@ def meeting_new(request):
         if form.is_valid():
             post = form.save(commit=False)
             # post.category = 'hi'
+            post.user = request.user
             post.save()
             return redirect('listpage')
         # else:

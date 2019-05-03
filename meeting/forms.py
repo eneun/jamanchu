@@ -5,9 +5,9 @@ from .models import Meeting
 class MeetingForm(forms.ModelForm):
     class Meta:
         model = Meeting
-        # fields = ['title', 'body', 'date', 'start_time', 'end_time']
+        fields = ['category', 'title', 'body', 'date', 'start_time', 'end_time']
         # fields = ['title']
-        fields = '__all__'
+        # fields = '__all__'
         
         widgets = {
             'category': forms.Select(

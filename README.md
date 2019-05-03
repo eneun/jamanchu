@@ -22,3 +22,4 @@
 9. 4/30 profiles 앱 생성, user와 one-to-one 연결 시도중
 10. 5/2 meeting 앱 c,r 백엔드 완성
 11. 5/2 profiles 앱 c,r 백엔드 완성
+12. 5/3 User-Meeting 모델 1:N 연결
