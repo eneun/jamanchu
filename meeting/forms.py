@@ -1,4 +1,3 @@
-from bootstrap_datepicker_plus import DatePickerInput, TimePickerInput, DateTimePickerInput, MonthPickerInput, YearPickerInput
 from django import forms
 from .models import Meeting
 

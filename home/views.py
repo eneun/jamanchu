@@ -7,3 +7,7 @@ def index(request):
 
 def second(request):
     return render(request, 'home/second.html')
+
+
+def third(request):
+    return render(request, 'home/third.html')

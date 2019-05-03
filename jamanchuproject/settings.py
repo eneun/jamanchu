@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'profiles.apps.ProfilesConfig',
     'bootstrap4',
-    'bootstrap_datepicker_plus',
 ]
 
 MIDDLEWARE = [

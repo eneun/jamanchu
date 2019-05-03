@@ -1,0 +1,16 @@
+<!-- 아래 4줄 필수 -->
+{% extends 'base.html' %}   
+{% block content %}         
+{% load bootstrap4 %}       
+{% bootstrap_css %}         
+{% bootstrap_javascript jquery='full' %}
+
+
+<!-- CSS 파일 가져올 경우에만 -->
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/css/third.css' %}" />
+
+<h1>home/third.html</h1>
+
+<!-- 아래 1줄 필수 -->
+{% endblock %}
