@@ -23,3 +23,4 @@
 10. 5/2 meeting 앱 c,r 백엔드 완성
 11. 5/2 profiles 앱 c,r 백엔드 완성
 12. 5/3 User-Meeting 모델 1:N 연결
+13. 5/6 Message 앱 생성, 쪽지 기능 구현, 리스팅 연구중

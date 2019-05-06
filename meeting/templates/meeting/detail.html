@@ -13,5 +13,7 @@
 <p>수정 시각 : {{ meeting.updated_at}}</p>
 <p>글쓴이 : {{ meeting.user }}</p>
 
+{% comment %} 나중에 url 바꾸기 {% endcomment %}
+<a href="{% url 'createmessage' meeting.id %}">쪽지 보내기</a>
 
 {% endblock %}

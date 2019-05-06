@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>message/showmessage.html</h1>
+
+<p>보낸이: {{ message.sender }}</p>
+<p>받는이: {{ message.receiver }}</p>
+<p>만남제목: {{ message.meeting }}</p>
+<p>메시지 내용: {{ message.content }}</a></p>
+<br/>
+
+
+{% endblock %}

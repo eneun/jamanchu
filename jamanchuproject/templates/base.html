@@ -26,6 +26,12 @@
     <a href="{% url 'signup' %}">회원가입</a> <br/>
 {% endif %}
 
+<a href="{% url 'second' %}">home/second</a>
+<a href="{% url 'mypage' %}">마이페이지</a>
+<a href="{% url 'listpage' %}">만남리스트</a>
+<a href="{% url 'listmessage' %}">쪽지함</a>
+
+
 <div>
     {% block content %}
     {% endblock %}

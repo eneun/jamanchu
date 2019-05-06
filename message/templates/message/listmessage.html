@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>message/listmessage.html</h1>
+
+{% for message in messages %}
+    <p>보낸이: {{ message.sender }}</p>
+    <p>받는이: {{ message.receiver }}</p>
+    <p>만남제목: {{ message.meeting }}</p>
+    <p>메시지 내용: <a href="{% url 'showmessage' message.id %}">{{ message.summary }}</a></p>
+    <br/>
+{% endfor %}
+
+{% comment %} show밑에 add.html에 form 렌더해서 글 쓸 수 있게 해줘야함! new는 첫 메시지 쓰는 칸!! {% endcomment %}
+
+{% endblock %}

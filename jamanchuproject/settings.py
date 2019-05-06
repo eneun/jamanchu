@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'meeting.apps.MeetingConfig',
     'accounts.apps.AccountsConfig',
     'profiles.apps.ProfilesConfig',
+    'message.apps.MessageConfig',
     'bootstrap4',
 ]
 
