@@ -1,19 +1,53 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block content %}
-<h2>meeting/detail 페이지</h2>
 
-<a href="{% url 'listpage' %}">listpage로 돌아가기</a>
-<h1>제목 : {{ meeting.title }}</h1>
-<h2>내용 : {{ meeting.body}}</h2>
-<p>카테고리 : {{ meeting.category }}</p>
-<p>날짜 : {{ meeting.date }}</p>
-<p>시작 시각 : {{ meeting.start_time }}</p>
-<p>종료 시각 : {{ meeting.end_time }}</p>
-<p>등록 시각 : {{ meeting.created_at}}</p>
-<p>수정 시각 : {{ meeting.updated_at}}</p>
-<p>글쓴이 : {{ meeting.user }}</p>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'meeting/css/style2.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
+</head>
 
+<section class="listB">
+    <h1> 이런 만남 어떤가요?  </h1>
+    <div class="detail_container">
+        <article>
+            <p class='text-right text-muted'>{{ meeting.created_at }}</p>
+            <h2> 카테고리 </h2>
+            <h3>  {{ meeting.category }} </h3>
+            <br>
+
+            <h2> 제목 </h2>
+            <h3> {{ meeting.title }} </h3>
+            <br>
+            
+            <h2> 간단 소개글 </h2>
+            <h3> {{ meeting.body}} </h3>
+            <br>
+            
+            
+
+            <h2> 가능한 시간대 </h2>
+            <h3>  {{ meeting.date }}일 {{ meeting.start_time }}~{{ meeting.end_time }} </h3>
+            <br>
+        
+            <hr>
+        
+            <h2> 작성자 </h2>
+            <h3> {{ meeting.user }} </h3>
+            <br>
+            
+            <h2> 작성자 소개글 </h2>
+            <h3> {{ meeting.user.profile.content }} </h3>
+            <br>
+        </article>
+    </div>
+</section>
+    
 {% comment %} 나중에 url 바꾸기 {% endcomment %}
 <a href="{% url 'createmessage' meeting.id %}">쪽지 보내기</a>
+
+<a href="{% url 'listpage' %}">listpage로 돌아가기</a>
+
 
 {% endblock %}

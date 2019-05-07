@@ -3,6 +3,8 @@
 
 <h1>message/listmessage.html</h1>
 
+{{ meesages_list}}
+
 {% for message in messages %}
     <p>보낸이: {{ message.sender }}</p>
     <p>받는이: {{ message.receiver }}</p>

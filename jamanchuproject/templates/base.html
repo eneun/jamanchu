@@ -8,31 +8,75 @@
 
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo|Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+
 
     <!-- css file load -->
-    <link rel="stylesheet" type="text/css" href="{% static 'nav.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'base/nav.css' %}" />
     <title>자만추 :: 자연스러운 만남 추구</title>
 </head>
     
-<h1>네비게이션 바가 올 부분</h1>
-{% if user.is_authenticated %}
-    환영합니다, {{ user.username }}님!
-    <a href="javascript:{document.getElementById('logout').submit()}">로그아웃</a>
-    <form id="logout" method="POST" action="{% url 'logout' %}">
-        {% csrf_token %} <input type="hidden" />
-    </form>
-{% else %}
-    <a href="{% url 'login' %}">로그인</a> <br/>
-    <a href="{% url 'signup' %}">회원가입</a> <br/>
-{% endif %}
+<body>
+    <header>
+        <div class="container">
+            <div class="container-small">
+                <a href="{% url 'listpage' %}" class="headA"> ZaManChu</a>
+                <button type="button" class="arrow" onclick="history.back(); return false">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                {% comment %} <img src="https://blogfiles.pstatic.net/MjAxOTA0MDFfMTY3/MDAxNTU0MTE0MTQxMzA0.u3GjfeBERjuopnV1SpTlG8oJNfu9SGxW_aa8oxqWgyAg.CFECZu-VdBv-GwFE9U_Qlzyum1jBTL8y_8IxEFnj-sQg.PNG.lje2085/%EA>%8B%A8%ED%95%9C_%EB%A1%9C%EA%B3%A0.png" class="logo" alt='로고'> {% endcomment %}
+                <img src="{% static 'base/minilogo.png' %}" class="logo" alt='로고'>
+                <button type="button" class="headC">
+                    <span class="fa fa-bars" title="MENU"> </span>
+                </button>
+            </div>
+            <nav class="headB">
+                <ul>
+                    {% if user.is_authenticated %}
+                        <li><a href="javascript:{document.getElementById('logout').submit()}">로그아웃</a></li>
+                        <form id="logout" method="POST" action="{% url 'logout' %}">
+                            {% csrf_token %} <input type="hidden" />
+                        </form>
+                        <li><a href="{% url 'listmessage' %}">쪽지함</a></li>
+                        <li><a href="{% url 'mypage' %}">마이페이지</a></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}">로그인</a></li>
+                        <li><a href="{% url 'login' %}">쪽지함</a></li>
+                        <li><a href="{% url 'login' %}">마이페이지</a></li>
+                        {% comment %} <a href="{% url 'signup' %}">회원가입</a> <br/> {% endcomment %}
+                    {% endif %}
+                    
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<a href="{% url 'second' %}">home/second</a>
-<a href="{% url 'mypage' %}">마이페이지</a>
-<a href="{% url 'listpage' %}">만남리스트</a>
-<a href="{% url 'listmessage' %}">쪽지함</a>
+    <div class='content'>
+        {% block content %}
+        {% endblock %}
+    </div>
 
+</body>
 
-<div>
-    {% block content %}
-    {% endblock %}
-</div>
+<script>
+    $(function(){
+    $(".headC").click(function(){
+        $(".headB").slideToggle();
+    });
+    });
+</script> 
+   

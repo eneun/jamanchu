@@ -1,16 +1,64 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load staticfiles %}
 
-<h1>profiles/mypage.html</h1>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'profiles/css/mypage.css' %}">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+	   $(function(){
+		$(".headC").click(function(){
+			$(".headB").slideToggle();
+		});
+	   });
+	</script> 
+</head>
 
-{% if user.is_authenticated %}
-    {{ user.username }}의 프로필 <br/>
-    {% if user.profile %}
-        <p>이메일 : {{ user.profile.email }}</p>
-        <p>한마디 : {{ user.profile.content }}</p>
-    {% else %}
-        <a href="{% url 'profilecreate' %}">프로필 작성하러 가기</a>
-    {% endif %}
+<h3> 마이페이지</h3> <br>
+{% if user.profile %}
+  <div class="card-group">
+    <div class="card">
+      <div class="card-body">
+          <h5 class='text-muted mb-0'>닉네임</h5>
+          <p class="card-text">{{ user.username }}</p>
+          <h5 class='text-muted mb-0'>연락처</h5>
+          <p class="card-text">{{ user.profile.email }}</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+          <h5 class='text-muted mb-1'>소개글</h5>
+          <p class="card-text m-0">{{ user.profile.content|linebreaks }}</p>
+      </div>
+    </div>
+  </div>
+{% else %}
+  <div class="card-group">
+    <div class="card">
+      <div class="card-body text-center py-5">
+        <h4 class='p-0 m-0'><a href="{% url 'profilecreate' %}">프로필 작성하러 가기!</a></h4>
+      </div>
+    </div>
+  </div>
 {% endif %}
+
+  <div class="card-group">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">스크랩함</h5>
+        <p class="card-text">관심 있는 만남 목록을 표시합니다.</p>
+        <button type="button" onclick="location.href='index.html'">만남 신청 목록으로 가기</button>
+      </div>
+    </div>
+
+  <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">등록한 만남</h5>
+        <p class="card-text"> 자신이 등록한 만남 목록을 표시합니다. </p>
+        <button type="button" onclick="location.href='index.html'"> 만남 등록 목록으로 가기</button>
+      </div>
+    </div>
+  </div>
 
 {% endblock %}

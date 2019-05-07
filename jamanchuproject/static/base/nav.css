@@ -1,0 +1,183 @@
+/* 여기다가 네브바 css 복붙해주세요! */
+
+@charset "UTF-8";
+:root {
+    --main-color: #6E37FF;
+    --yellow-color: #F9DC2A;
+    --light-color: #AD58F7;
+    --white-color: #fff;
+    --orange-color: #FFA650;
+    --large-width: 1300px;
+    --brown-color: #3A3727;
+    --gray-color: #ddd;
+    --black-color: #000;
+}
+
+body {
+	/* margin: 0; */
+	/* font-family: ' 맑은 고딕', 'Apple SD Gothic Neo',	sans-serif; */
+	/* font-size: 10px; */
+	/* background-color: var(--white-color);
+	background-color: #fff; */
+ }
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: var(--main-color);
+    background-color: #6E37FF;
+    border-bottom: solid 2px #ddd;
+    border-bottom: solid 2px var(--gray-color);
+}
+
+.headA {
+    display: inline-block;
+    line-height: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #6E37FF;
+    background-color: var(--main-color);
+    color: #fff;
+    color: var(--white-color);
+    /*font-family: 'Nanum Gothic', sans-serif;*/
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 2.5rem;
+    text-decoration: none;
+    text-shadow: -1.5px -1.5px 1.5px rgba(255,255,255,0.5), 1px 1px 1px rgba(0,0,0,0.5);	
+}
+
+.headA:hover {
+    background-color: var(--light-color);
+    background-color: #AD58F7;
+    text-decoration: none;
+    color: #fff;
+    color: var(--white-color);
+ } 
+
+ 
+
+.headB a {
+ 	display: block;
+ 	padding: 1rem;
+ 	color: inherit;
+	font-family: 'Nanum Gothic', sans-serif;
+ 	font-size: 1rem;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: -1px -1px 1px rgba(255,255,255,0.3), 1px 1px 1px rgba(0,0,0,0.2);
+ }
+
+ .headB ul {
+ 	margin: 0;
+ 	padding: 0;
+	color: #fff;
+	color: var(--white-color);
+ 	list-style: none;
+  }
+
+
+.headB a:hover {
+    /*background-color: var(--yellow-color);*/
+    color: #FFC803;
+ }
+
+
+@media (min-width: 768px) {
+   /* 큰 화면 전용 설정*/	
+	header .container{	 
+	   overflow: hidden;
+	   max-width: 1300px;
+	   max-width: var(--large-width);
+	   margin-left: auto;
+	   margin-right: auto;	  
+	}
+	
+	.headA {
+	  float: left;
+	}	
+
+	.headB ul {
+	  display: flex;
+	  margin-top: 5px;
+	  float: right;
+  	}
+
+	.headC {
+	  display: none;
+	}
+	
+	.headB {
+	   display: block !important;
+	}
+	
+	.logo {
+	  display: none;
+	}
+	
+	.arrow {
+	  display: none;
+	}
+}
+
+
+@media (max-width: 767px) {
+    /* 작은 화면 전용 설정 */
+	header .container-small {
+	   display: flex;
+	   align-items: center;
+	   justify-content: space-between;
+	   padding: 1rem;
+	}
+	
+	.headA{
+	  display: none;
+	}
+
+	.headC {
+	  margin-right: 10px;
+	  padding: 0;
+	  border: none;
+	  outline: none;
+	  background: none;
+	  font-size: 30px;
+	  color: var(--white-color);
+	  cursor: pointer;
+	}
+
+	.headC:hover{
+	  opacity: 0.3;
+	}
+
+	.headB {
+	  display: none;
+	}
+	
+	.logo {
+	  align-items: center;
+	  margin: 0;
+	  width: 2.3rem;
+	  height: 2.3rem;
+	}
+	
+	.arrow{
+ 	  margin-left: 1rem;
+	  padding: 0;
+	  border: none;
+	  outline: none;
+	  background: none;
+	  font-size: 2rem;
+	  color: var(--white-color);
+	  cursor: pointer;
+	}
+	
+	.arrow:hover{
+	  opacity: 0.3;
+	}  
+ }
+
+ .content {
+	 margin-top: 5rem;
+ }
