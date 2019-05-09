@@ -1,17 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load staticfiles %}
 
-<h1>message/listmessage.html</h1>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'message/css/list_message_style.css' %}" >
+</head>
 
-{{ meesages_list}}
+<section class = "listM">
+    <h1> 쪽지함 </h1>
+    <div class="messagebox_container">
 
-{% for message in messages %}
-    <p>보낸이: {{ message.sender }}</p>
-    <p>받는이: {{ message.receiver }}</p>
-    <p>만남제목: {{ message.meeting }}</p>
-    <p>메시지 내용: <a href="{% url 'showmessage' message.id %}">{{ message.summary }}</a></p>
-    <br/>
-{% endfor %}
+        {% comment %} while문으로 바꿔서 다음 객체와 비교, 다음 객체와 같으면 현재 객체 출력x하도록 바꾸기 {% endcomment %}
+        {% for message in messages %} 
+            <div class="messagebox_list">
+                <a href="{% url 'showmessage' message.id %}">
+                    <h2> 보낸이: {{ message.sender }} </h2>
+                    <h2> 받는이: {{ message.receiver }} </h2>
+                    <h3> {{ message.summary }} </h3>
+                    <h4> {{ message.created_at }}</h4>
+                    <h5> *참고* 연결된 만남 제목: {{ message.meeting }} </h5>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</section>
 
 {% comment %} show밑에 add.html에 form 렌더해서 글 쓸 수 있게 해줘야함! new는 첫 메시지 쓰는 칸!! {% endcomment %}
 

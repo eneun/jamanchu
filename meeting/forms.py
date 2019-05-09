@@ -12,19 +12,20 @@ class MeetingForm(forms.ModelForm):
         widgets = {
             'category': forms.Select(
                 attrs={
-                    'class': 'form-control'
+                    'class': 'form-control',
                 }
             ),
             'title': forms.TextInput(
                 attrs={
                     'class': 'form-control',
-                    'placeholder': '제목을 입력하세요.',
+                    'placeholder': 'ex) 같이 보드게임해요',
                 }
             ),
             'body': forms.Textarea(
                 attrs={
                     'class': 'form-control',
                     'placeholder': '내용을 입력하세요.',
+                    'rows': '5',
                 }
             ),
             'date': forms.DateInput(

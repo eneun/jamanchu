@@ -10,6 +10,13 @@
     <link rel="stylesheet" type="text/css" href="{% static 'meeting/css/style1.css' %}" >
 </head>
 
+<nav class="sub_navbar navbar-light bg-light text-right">
+    <div class="form-inline">
+        <a class="btn btn-outline-success" href="#"> <i class="fas fa-search fa-lg"></i> 만남 검색</a>
+        <a class="btn btn-outline-success" href="{% url 'meetingcreate' %}"> <i class="fas fa-plus fa-lg"></i> 만남 추가</a>
+    </div>
+</nav>
+
 <section class = "listA">
     <div class="listpage_container">
         <h1> 실시간 만남리스트 </h1>
@@ -31,7 +38,9 @@
     </div>
 </section>
 
-<a href="{% url 'index' %}">index로 돌아가기</a>
-<a href="{% url 'meetingcreate' %}">새 글 쓰기</a>
+<div class="btn-group">
+   <a href="#"> <i class="fas fa-search fa-lg"></i> 만남 찾기</a>
+   <a href="{% url 'meetingcreate' %}"><i class="fas fa-plus fa-lg"></i> 만남 등록</a>
+</div>
 
 {% endblock %}

@@ -6,7 +6,7 @@ from .forms import MessageForm
 # Create your views here.
 def listmessage(request):
     # 보낸이, 받는이가 본인인 message들만 가져오기
-    messages = Message.objects.filter(sender=request.user) | Message.objects.filter(receiver=request.user)
+    messages = Message.objects.filter(sender=request.user) | Message.objects.filter(receiver=request.user).order_by('meeting', '-created_at')
     return render(request, 'message/listmessage.html', {'messages': messages})
 
 def show(request, message_id):

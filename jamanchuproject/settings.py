@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'profiles.apps.ProfilesConfig',
     'message.apps.MessageConfig',
+    'search.apps.SearchConfig',
     'bootstrap4',
 ]
 

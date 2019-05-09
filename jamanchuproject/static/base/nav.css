@@ -29,8 +29,6 @@ header {
     width: 100%;
     background-color: var(--main-color);
     background-color: #6E37FF;
-    border-bottom: solid 2px #ddd;
-    border-bottom: solid 2px var(--gray-color);
 }
 
 .headA {
@@ -68,6 +66,7 @@ header {
 	font-weight: bold;
 	text-decoration: none;
 	text-shadow: -1px -1px 1px rgba(255,255,255,0.3), 1px 1px 1px rgba(0,0,0,0.2);
+	line-height: 28px;
  }
 
  .headB ul {

@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
-
 {% block content %}
+
+<head>
+    {% load staticfiles %}
+    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/login_style.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/style.css' %}" />
+</head>
 
 {% if error %}
     {{ error }}
@@ -8,8 +14,24 @@
     <br/>
 {% endif %}
 
-{% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'accounts/css/style.css' %}" />
+<div class="loginpage">
+  <form class="login-form" action="{% url 'login' %}" method='POST'>
+    {% csrf_token %}
+    
+    <div class="loginpage_container">
+      <img src="{% static 'accounts/images/logo_full.png' %}" alt='logo'>
+
+      <input name="username" type="text" value="" placeholder="아이디"/>
+      <input name="password" type="password" value="" placeholder="비밀번호"/>
+      <input type="submit" class='btn btn-primary' value='로그인!'>
+
+      <p class="message"><a href="{% url 'signup' %}">회원가입</a></p>
+      <p class="message"><a href="#">아이디/비밀번호 찾기</a></p>
+      <p class="message"><a href="{% url 'listpage' %}"><b>둘러보기!</b></a></p>
+    </div> 
+  </form>
+</div>
+
 
 <h1>로그인 페이지</h1>
 

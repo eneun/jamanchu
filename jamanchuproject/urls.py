@@ -36,4 +36,6 @@ urlpatterns = [
     path('profiles/', include('profiles.urls')),
     # message 앱
     path('message/', include('message.urls')),
+    # search 앱
+    path('search/', include('search.urls')),
 ]
