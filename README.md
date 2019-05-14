@@ -26,3 +26,4 @@
 13. 5/6 Message 앱 생성, 쪽지 기능 구현, 리스팅 연구중
 14. 5/9 수업 시간에 html, css 합침
 15. 5/14 search app 완료, message app 완료
+16. 5/14 scrap app 만듦, scraplist template 만듦
