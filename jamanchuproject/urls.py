@@ -20,6 +20,7 @@ import meeting.views
 import accounts.views
 import profiles.views
 import message.views
+import scrap.views
 
 urlpatterns = [
     # 관리자 페이지
@@ -38,4 +39,6 @@ urlpatterns = [
     path('message/', include('message.urls')),
     # search 앱
     path('search/', include('search.urls')),
+    # scrap 앱
+    path('scrap/', include('scrap.urls')),
 ]
