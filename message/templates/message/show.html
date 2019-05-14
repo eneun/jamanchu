@@ -1,13 +1,41 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>message/showmessage.html</h1>
+<head>
+    {% load staticfiles %}
+    <link rel="stylesheet" type='text/css' href="{% static 'message/css/letter_style.css' %}">
+</head>
 
-<p>보낸이: {{ message.sender }}</p>
-<p>받는이: {{ message.receiver }}</p>
-<p>만남제목: {{ message.meeting }}</p>
-<p>메시지 내용: {{ message.content }}</a></p>
-<br/>
 
+
+<section class = "letter">
+    <div class="letter_container">
+        {% if not messages.first.sender == request.user %}
+            <h1> {{ messages.first.sender }} 님과의 쪽지 </h1>
+        {% else %}
+            <h1> {{ messages.first.receiver }} 님과의 쪽지 </h1>
+        {% endif %}
+
+        {% for message in messages %}
+            {% if message.sender == request.user %}
+                <div class="sent">
+                    <h2> 보낸 쪽지 </h2>
+                    <h3> {{ message.content }}  </h3>
+                    <h4> {{ message.created_at }} </h4>
+                </div>
+            {% else %}
+                <div class="recv">
+                    <h2>받은 쪽지 </h2>
+                    <h3> {{ message.content }} </h3>
+                    <h4> {{ message.created_at }} </h4>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+<form action="#">
+    {{form}}
+    <input type='submit' value='보내기'>
+</form>
 
 {% endblock %}

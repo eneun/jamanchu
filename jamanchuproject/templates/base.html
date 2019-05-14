@@ -47,7 +47,7 @@
                 <ul>
                     {% if user.is_authenticated %}
                         <li><a href="javascript:{document.getElementById('logout').submit()}">로그아웃</a></li>
-                        <form id="logout" method="POST" action="{% url 'logout' %}">
+                        <form id="logout" method="POST" action="{% url 'logout' %}" style="margin-bottom:0;">
                             {% csrf_token %} <input type="hidden" />
                         </form>
                         <li><a href="{% url 'listmessage' %}">쪽지함</a></li>

@@ -9,9 +9,14 @@ def listmessage(request):
     messages = Message.objects.filter(sender=request.user) | Message.objects.filter(receiver=request.user).order_by('meeting', '-created_at')
     return render(request, 'message/listmessage.html', {'messages': messages})
 
-def show(request, message_id):
-    message = get_object_or_404(Message, pk=message_id)
-    return render(request, 'message/show.html', {'message': message})
+def show(request):
+    sender = request.GET['sender']
+    receiver = request.GET['receiver']
+    meeting = request.GET['meeting']
+    messages = Message.objects.filter(meeting=meeting)
+    messages = messages.filter(sender=sender, receiver=receiver) | Message.objects.filter(sender=receiver, receiver=sender).order_by('-created_at')
+    form = MessageForm()
+    return render(request, 'message/show.html', {'messages': messages, 'form': form})
 
 def new(request, meeting_id):
     meeting = get_object_or_404(Meeting, pk=meeting_id)

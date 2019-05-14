@@ -1,3 +1,46 @@
-{% for meeting in meetings %}
-    {{ meeting.title }}
-{% endfor %}
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'meeting/css/style1.css' %}" >
+</head>
+
+<nav class="sub_navbar navbar-light bg-light text-right">
+    <div class="form-inline">
+        <a class="btn btn-outline-success" href="{% url 'filters' %}"> <i class="fas fa-search fa-lg"></i> 만남 검색</a>
+        <a class="btn btn-outline-success" href="{% url 'meetingcreate' %}"> <i class="fas fa-plus fa-lg"></i> 만남 등록</a>
+    </div>
+</nav>
+
+<section class = "listA">
+    <div class="listpage_container">
+        <h1> 검색 결과 </h1>
+        <table>
+            <tbody>
+                {% for meeting in meetings %}
+                    <tr>
+                        <a class='shadowlink' href="{% url 'detail' meeting.id %}">
+                        <h2>제목 : {{ meeting.title }}</h2><p>
+                        <h3>내용 : {{ meeting.summary}}</h3><p>
+                        날짜 : {{ meeting.date }}
+                    </tr></a>
+                {% empty %}
+                    검색 결과가 없습니다
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</section>
+
+<div class="btn-group">
+   <a href="{% url 'filters' %}"> <i class="fas fa-search fa-lg"></i> 만남 검색</a>
+   <a href="{% url 'meetingcreate' %}"><i class="fas fa-plus fa-lg"></i> 만남 등록</a>
+</div>
+
+{% endblock %}

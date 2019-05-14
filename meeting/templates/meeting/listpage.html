@@ -12,8 +12,8 @@
 
 <nav class="sub_navbar navbar-light bg-light text-right">
     <div class="form-inline">
-        <a class="btn btn-outline-success" href="#"> <i class="fas fa-search fa-lg"></i> 만남 검색</a>
-        <a class="btn btn-outline-success" href="{% url 'meetingcreate' %}"> <i class="fas fa-plus fa-lg"></i> 만남 추가</a>
+        <a class="btn btn-outline-success" href="{% url 'filters' %}"> <i class="fas fa-search fa-lg"></i> 만남 검색</a>
+        <a class="btn btn-outline-success" href="{% url 'meetingcreate' %}"> <i class="fas fa-plus fa-lg"></i> 만남 등록</a>
     </div>
 </nav>
 
@@ -39,7 +39,7 @@
 </section>
 
 <div class="btn-group">
-   <a href="#"> <i class="fas fa-search fa-lg"></i> 만남 찾기</a>
+   <a href="{% url 'filters' %}"> <i class="fas fa-search fa-lg"></i> 만남 검색</a>
    <a href="{% url 'meetingcreate' %}"><i class="fas fa-plus fa-lg"></i> 만남 등록</a>
 </div>
 
