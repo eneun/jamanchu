@@ -27,3 +27,4 @@
 14. 5/9 수업 시간에 html, css 합침
 15. 5/14 search app 완료, message app 완료
 16. 5/14 scrap app 만듦, scraplist template 만듦
+17. 5/16 message app 리스팅 오류 수정

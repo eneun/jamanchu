@@ -7,8 +7,8 @@
 </head>
 
 
-
 <section class = "letter">
+
     <div class="letter_container">
         {% if not messages.first.sender == request.user %}
             <h1> {{ messages.first.sender }} 님과의 쪽지 </h1>
@@ -20,22 +20,30 @@
             {% if message.sender == request.user %}
                 <div class="sent">
                     <h2> 보낸 쪽지 </h2>
+                    <p>보낸이 : {{ message.sender }}</p>
+                    <p>받는이 : {{ message.receiver }}</p>
+                    <p>게시글 : {{ message.meeting }}</p>
                     <h3> {{ message.content }}  </h3>
                     <h4> {{ message.created_at }} </h4>
                 </div>
             {% else %}
                 <div class="recv">
                     <h2>받은 쪽지 </h2>
+                    <p>보낸이 : {{ message.sender }}</p>
+                    <p>받는이 : {{ message.receiver }}</p>
+                    <p>게시글 : {{ message.meeting }}</p>
                     <h3> {{ message.content }} </h3>
                     <h4> {{ message.created_at }} </h4>
                 </div>
             {% endif %}
         {% endfor %}
     </div>
+
 </section>
 <form action="#">
     {{form}}
     <input type='submit' value='보내기'>
+    <input type='hidden' value="{{ message.">
 </form>
 
 {% endblock %}

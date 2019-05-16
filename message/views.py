@@ -6,15 +6,20 @@ from .forms import MessageForm
 # Create your views here.
 def listmessage(request):
     # 보낸이, 받는이가 본인인 message들만 가져오기
-    messages = Message.objects.filter(sender=request.user) | Message.objects.filter(receiver=request.user).order_by('meeting', '-created_at')
+    messages = Message.objects.filter(sender=request.user) | Message.objects.filter(receiver=request.user)
+    messages = messages.order_by('meeting', '-created_at')
+    # messages = Message.objects.all
     return render(request, 'message/listmessage.html', {'messages': messages})
 
-def show(request):
-    sender = request.GET['sender']
-    receiver = request.GET['receiver']
-    meeting = request.GET['meeting']
-    messages = Message.objects.filter(meeting=meeting)
-    messages = messages.filter(sender=sender, receiver=receiver) | Message.objects.filter(sender=receiver, receiver=sender).order_by('-created_at')
+def show(request, message_id):
+    message = get_object_or_404(Message, pk=message_id)
+    # receiver = request.GET['receiver']
+    # meeting = request.GET['meeting']
+    print(message.meeting)
+    # messages = Message.objects.filter(meeting=meeting)
+    messages = Message.objects.filter(sender=message.sender, receiver=message.receiver) | Message.objects.filter(sender=message.receiver, receiver=message.sender).order_by('-created_at')
+    messages = messages.filter(meeting=message.meeting)
+    
     form = MessageForm()
     return render(request, 'message/show.html', {'messages': messages, 'form': form})
 

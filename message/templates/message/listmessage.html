@@ -14,20 +14,21 @@
 
         {% comment %} while문으로 바꿔서 다음 객체와 비교, 다음 객체와 같으면 현재 객체 출력x하도록 바꾸기 {% endcomment %}
         {% for message in messages %}
-            {% ifchanged message.sender or message.receiver %}
+            {% ifchanged message.sender or message.receiver or message.meeting %}
                 <div class="messagebox_list">
-                    <a href="javascript:{document.getElementById('showmessage').submit()}">
+                    {% comment %} <a href="javascript:{document.getElementById('showmessage').submit()}"> {% endcomment %}
+                    <a href="{% url 'showmessage' message.id %}">
                         <h2> 보낸이: {{ message.sender }} </h2>
                         <h2> 받는이: {{ message.receiver }} </h2>
                         <h3> {{ message.summary }} </h3>
                         <h4> {{ message.created_at }}</h4>
                         <h5> *참고* 연결된 만남 제목: {{ message.meeting }} </h5>
                     </a>
-                    <form id='showmessage' action="{% url 'showmessage' %}" method="GET">
-                        <input name='sender' type='hidden' value= {{ message.sender.id }} />
-                        <input name='receiver' type='hidden' value= {{ message.receiver.id }} />
-                        <input name='meeting' type='hidden' value= {{ message.meeting.id }} />
-                    </form>
+                    {% comment %} <form id='showmessage' action="{% url 'showmessage' %}" method="GET">
+                        <input name='sender' type='hidden' value="{{message.sender}}" />
+                        <input name='receiver' type='hidden' value="{{message.receiver}}" />
+                        <input name='meeting' type='hidden' value="{{message.meeting}}" />
+                    </form> {% endcomment %}
 
                 </div>
             {% endifchanged %}
