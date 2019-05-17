@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Message
 from meeting.models import Meeting
-from .forms import MessageForm
+from .forms import MessageForm, AddMessageForm
 
 # Create your views here.
 def listmessage(request):
@@ -16,7 +16,7 @@ def show(request, message_id):
     messages = messages.filter(meeting=message.meeting)
     messages = messages.order_by('created_at')
     
-    form = MessageForm()
+    form = AddMessageForm()
     return render(request, 'message/show.html', {'messages': messages, 'form': form})
 
 def add(request, message_id):
@@ -29,7 +29,7 @@ def add(request, message_id):
     meeting = message.meeting
 
     if request.method == 'POST':
-        form = MessageForm(request.POST)
+        form = AddMessageForm(request.POST)
         if form.is_valid():
             message = form.save(commit=False)
             message.sender = request.user
@@ -41,7 +41,7 @@ def add(request, message_id):
         else:
             return HttpResponseRedirect('/')
     else:
-        form = MessageForm()
+        form = AddMessageForm()
         return redirect('show', message_id=message.pk)
 
 def new(request, meeting_id):
