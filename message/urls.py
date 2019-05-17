@@ -6,4 +6,5 @@ urlpatterns = [
     path('new/<int:meeting_id>/', views.new, name="newmessage"),
     path('create/<int:meeting_id>/', views.create, name="createmessage"),
     path('show/<int:message_id>', views.show, name="showmessage"),
+    path('add/<int:message_id>', views.add, name="addmessage"),
 ]

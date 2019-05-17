@@ -15,6 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+# 장고 디버깅
+from django.conf.urls import url, include
+from django.conf import settings
+
 import home.views
 import meeting.views
 import accounts.views
@@ -41,4 +45,10 @@ urlpatterns = [
     path('search/', include('search.urls')),
     # scrap 앱
     path('scrap/', include('scrap.urls')),
+]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
 ]

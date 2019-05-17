@@ -40,10 +40,11 @@
     </div>
 
 </section>
-<form action="#">
+<form action="{% url 'addmessage' messages.last.id %}" method='POST'>
+    {% csrf_token %}
     {{form}}
     <input type='submit' value='보내기'>
-    <input type='hidden' value="{{ message.">
+    {% comment %} <input type='hidden' value="{{message.meeting}}"> {% endcomment %}
 </form>
 
 {% endblock %}

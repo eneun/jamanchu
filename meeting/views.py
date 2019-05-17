@@ -5,7 +5,7 @@ from .forms import MeetingForm
 # Create your views here.
 
 def listpage(request):
-    meetings = Meeting.objects
+    meetings = Meeting.objects.order_by('-created_at')
     return render(request, 'meeting/listpage.html', {'meetings': meetings})
 
 def detail(request, meeting_id):
