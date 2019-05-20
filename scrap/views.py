@@ -10,16 +10,15 @@ def scraplist(request):
 
 def scrap(request, meeting_id):
     meeting = get_object_or_404(Meeting, pk=meeting_id)
-    try:
+    check = Scrap.objects.filter(user=request.user, meeting=meeting)
+    if not check:
         scrap = Scrap()
         scrap.user = request.user
         scrap.meeting = meeting
         scrap.save()
-    except:
+    else:
         scrap = Scrap.objects.filter(user=request.user)
-        scrap = scrap.get(meeting=meeting)
         scrap.delete()
-    # return redirect('scraplist')
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 def unscrap(request, scrap_id):

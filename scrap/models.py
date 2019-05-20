@@ -6,5 +6,5 @@ from meeting.models import Meeting
 
 class Scrap(models.Model):
     user = models.ForeignKey(User, related_name='user', on_delete=True)
-    meeting = models.ForeignKey(Meeting, related_name='scrapped', on_delete=True, unique=True)
+    meeting = models.ForeignKey(Meeting, related_name='scrapped', on_delete=True)
     created_at = models.DateTimeField(auto_now_add=True)
