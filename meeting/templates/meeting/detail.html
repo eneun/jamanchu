@@ -14,10 +14,13 @@
     <div class="title_zone">
     {% comment %} <div class="title_zone d-flex justify-content-between"> {% endcomment %}
         <h3 class='title'>{{ meeting.title }}</h3>
-        <h5 class='date'>{{ meeting.created_at }}</h5>
+        <h5 class='created_at'>{{ meeting.created_at }}</h5>
+    </div>
+    <div class='category_zone'>
+        <h5 class='category'>분류 : {{ meeting.category }}</h5>
     </div>
     <div class="time_zone">
-        <h5>{{ meeting.date|date:"n월 j일" }} {{ meeting.start_time|time:"gA" }} ~ {{ meeting.end_time|time:"gA" }}</h5>
+        <h5>일자 : {{ meeting.date|date:"n월 j일" }} {{ meeting.start_time|time:"gA" }} ~ {{ meeting.end_time|time:"gA" }}</h5>
     </div>
     <div class="content_zone">
         <p>{{ meeting.body|linebreaks }}</p>

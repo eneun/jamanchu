@@ -22,9 +22,21 @@
     color: #666;
     float: left;
 }
-.date {
+.created_at {
     float: right;
     color: #cacaca;
+}
+.category_zone {
+    color: #666;
+    margin: 0.5rem 0.5rem;
+    margin-left: 0;
+    font-family: 'BBTreeGB'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGB.woff') format('woff'); font-weight: normal; font-style: normal;
+}
+.time_zone {
+    color: #666;
+    margin: 0.5rem 0.5rem;
+    margin-left: 0;
+    font-family: 'BBTreeGB'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGB.woff') format('woff'); font-weight: normal; font-style: normal;
 }
 @media (max-width: 767px) {
     .detail_section {
@@ -39,7 +51,7 @@
         float: none;
         font-size: 24px;
     }
-    .date {
+    .created_at {
         float: none;
         font-size: 16px;
     }
