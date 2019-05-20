@@ -32,3 +32,4 @@
 18. 5/17 message app show.html 서브리스팅 수정, AddMessageForm 적용
 19. 5/21 scrap 구현
 20. 5/21 scrap scrap.models의 meeting 필드에서 unique=True로 인한 오류 수정
+21. 5/21 내가 등록한 만남 보기 페이지 생성
