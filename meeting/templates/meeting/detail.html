@@ -3,12 +3,43 @@
 {% block content %}
 
 <head>
-    <link rel="stylesheet" type="text/css" href="{% static 'meeting/css/style2.css' %}" />
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'meeting/css/style2.css' %}" /> {% endcomment %}
+    <link rel="stylesheet" type="text/css" href="{% static 'meeting/css/detail.css' %}" />
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
 </head>
 
-<section class="listB">
+<!-- 예은 section -->
+<div class="detail_section" >
+    <div class="title_zone">
+    {% comment %} <div class="title_zone d-flex justify-content-between"> {% endcomment %}
+        <h3 class='title'>{{ meeting.title }}</h3>
+        <h5 class='date'>{{ meeting.created_at }}</h5>
+    </div>
+    <div class="content_zone">
+        <p>{{ meeting.body|linebreaks }}</p>
+    </div>
+    <div class='user_zone'>
+        <h5 class='author'>작성자 {{ meeting.user.username }}</h5>
+        <h5 class='profile_content'>{{ meeting.user.profile.content|linebreaks }}</h5>
+    </div>
+    <div class='message_scrap_zone'>
+        <a href="{% url 'createmessage' meeting.id %}" class='message'>
+            <i class="far fa-paper-plane fa-lg"></i> 쪽지 보내기
+        </a>
+        <a href="{% url 'scrap' meeting.id %}" class='scrap'>
+            {% if scrap %}
+                    <i class="fas fa-star fa-lg"></i> 스크랩 취소
+            {% else %}
+                    <i class="far fa-star fa-lg"></i> 스크랩
+            {% endif %}
+        </a>
+    </div>
+</div>
+    
+
+
+{% comment %} <section class="listB">
     <h1> 이런 만남 어떤가요?  </h1>
     <div class="detail_container">
         <article>
@@ -42,12 +73,19 @@
             <br>
         </article>
     </div>
-</section>
+</section> {% endcomment %}
     
 {% comment %} 나중에 url 바꾸기 {% endcomment %}
-<a href="{% url 'createmessage' meeting.id %}">쪽지 보내기</a>
 
-<a href="{% url 'listpage' %}">listpage로 돌아가기</a>
-
+<div class="btn-group">
+   <a href="{% url 'createmessage' meeting.id %}"> <i class="far fa-paper-plane fa-lg"></i></i></i> 쪽지 보내기</a>
+   <a href="{% url 'scrap' meeting.id %}">
+        {% if scrap %}
+                <i class="fas fa-star fa-lg"></i> 스크랩 취소
+        {% else %}
+                <i class="far fa-star fa-lg"></i> 스크랩
+        {% endif %}
+   </a>
+</div>
 
 {% endblock %}

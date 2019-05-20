@@ -30,7 +30,7 @@ urlpatterns = [
     # 관리자 페이지
     path('admin/', admin.site.urls),
     # 메인 페이지
-    path('', home.views.index, name="index"),
+    path('', accounts.views.login, name="login"),
     # home 앱
     path('home/', include('home.urls')),
     # meeting 앱

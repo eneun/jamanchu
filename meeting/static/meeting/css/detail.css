@@ -1,0 +1,125 @@
+/* for desktop */
+.detail_section {
+    margin-top: 7rem;
+    margin-left: 20rem;
+    margin-right: 20rem;
+    margin-bottom: 7rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    -webkit-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.2);
+}
+.title_zone {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'BBTreeGB'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGB.woff') format('woff'); font-weight: normal; font-style: normal;
+    border-bottom: 5px solid var(--yellow-color);
+}
+.title {
+    color: #666;
+    float: left;
+}
+.date {
+    float: right;
+    color: #cacaca;
+}
+@media (max-width: 767px) {
+    .detail_section {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .title_zone {
+        display: block!important;
+        justify-content: none;
+    }
+    .title {
+        float: none;
+        font-size: 24px;
+    }
+    .date {
+        float: none;
+        font-size: 16px;
+    }
+}
+.content_zone {
+    margin-bottom: 3rem;
+}
+.user_zone {
+    color: #666;
+    font-family: 'BBTreeGB'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGB.woff') format('woff'); font-weight: normal; font-style: normal;
+    margin-bottom: 2rem;
+}
+.author {
+    padding-bottom: 8px;
+    border-bottom: 5px solid var(--yellow-color);
+}
+.profile_content {
+}
+.message_scrap_zone{
+    display: none;
+}
+@media(min-width: 768px) {
+    .message_scrap_zone {
+        width: 100%;
+        display: inline-flex;
+    }
+    .message, .scrap {
+        width: 50%;
+        padding: 1.1rem;
+        text-align: center;
+        background-color: var(--main-color);
+        color: white;
+        border-right: 0.5px solid white;
+        font-family: 'Nanum Gothic', sans-serif;
+        font-size: 1.2rem;
+        letter-spacing: 4px;
+    }
+    .message:hover, .scrap:hover {
+        color: white
+    }
+}
+
+
+.btn-group {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+}
+.btn-group a {
+    width: 100%;
+    outline: none;
+    border-left-width: 0.3px;
+    border-left-style: double;
+    border-right-width: 0.3px;
+    border-right-style: double;
+    border-bottom: none;
+    border-top-width: 2px;
+    border-top-style: double;
+    border-color: var(--gray-color);
+    padding: 1.1rem;
+    font-family: 'Nanum Gothic', sans-serif;
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    font-weight: bold;
+    background-color: var(--main-color);
+    color: var(--white-color);
+}
+
+.btn-group button:hover {
+    background-color: var(--yellow-color);
+    color: var(--black-color);
+}
+@media (min-width: 768px) {
+    .btn-group {
+        display: none;
+    }
+} 
+a:hover {
+    text-decoration: none;
+} 

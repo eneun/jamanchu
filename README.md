@@ -30,3 +30,4 @@
 16. 5/14 scrap app 만듦, scraplist template 만듦
 17. 5/16 message app 리스팅 오류 수정
 18. 5/17 message app show.html 서브리스팅 수정, AddMessageForm 적용
+19. 5/21 scrap 구현

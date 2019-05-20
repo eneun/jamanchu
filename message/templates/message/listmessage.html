@@ -6,7 +6,35 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'message/css/list_message_style.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'message/css/message_list.css' %}">
 </head>
+
+
+
+<div class="box">
+    {% for message in messages %}
+        {% ifchanged message.sender or message.receiver or message.meeting %}
+            <a href="{% url 'showmessage' message.id %}">
+                <div class="card">
+                    {% comment %} <div class="imgBx">
+                        <img src="https://images.unsplash.com/photo-1532123675048-773bd75df1b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
+                    </div> {% endcomment %}
+                    <div class="simple_info">
+                        <strong>{{ message.sender }}</strong>  {{ message.created_at }}<br/>
+                        <strong>게시글 : {{ message.meeting }}</strong>
+                    </div>
+                    
+                    <div class="details">
+                        <h2>{{ message.summary }}<br></h2>
+                    </div>
+                </div>
+            </a>
+        {% endifchanged %}
+    {% endfor %}
+</div>
+
+
+
 
 <section class = "listM">
     <h1> 쪽지함 </h1>
