@@ -17,7 +17,7 @@ def scrap(request, meeting_id):
         scrap.meeting = meeting
         scrap.save()
     else:
-        scrap = Scrap.objects.filter(user=request.user)
+        scrap = Scrap.objects.filter(user=request.user, meeting=meeting)
         scrap.delete()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
