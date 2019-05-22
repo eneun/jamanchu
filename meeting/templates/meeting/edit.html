@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'meeting/css/add.css' %}" >
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<form method="POST">
+    {% csrf_token %}
+    <h3 align="left"> 만남을 수정해주세요 </h3>
+    <div class="form-group">
+        <label>만남 제목</label>
+        {{ form.title }}
+    </div>
+    <div class="form-group">
+        <label>만남 소개글</label>
+        {{ form.body }}
+    </div>
+    <div class="form-group">
+        <label>만남 카테고리</label>
+        {{ form.category }}
+    </div>
+    <div class="form-group">
+        <label>만남 날짜</label>
+        {{ form.date }}    
+    </div>
+    <div class="form-group">
+        <div class="row">
+           <div class="col">
+                <label>시작 시간 </label>
+                {{ form.start_time }}
+            </div>
+               
+            <div class="col">  
+                <label>끝 시간 </label>
+                {{ form.end_time }}
+            </div>
+        </div>
+    </div>
+    <div class="btn1">
+        <button type="submit"> <i class="fab fa-pushed"></i> 만남 등록</button>
+    </div>
+</form>
+
+{% endblock %}

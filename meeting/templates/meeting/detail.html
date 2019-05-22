@@ -41,6 +41,10 @@
             {% endif %}
         </a>
     </div>
+    {% if meeting.user == request.user %}
+        <a href="{% url 'meetingupdate' meeting.id %}">수정하기</a>
+        <a href="{% url 'meetingdestroy' meeting.id %}" onclick="return confirm('정말 삭제하시겠습니까?')">삭제하기</a>
+    {% endif %}
 </div>
     
 

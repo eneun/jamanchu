@@ -20,6 +20,3 @@ def scrap(request, meeting_id):
         scrap = Scrap.objects.filter(user=request.user, meeting=meeting)
         scrap.delete()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
-
-def unscrap(request, scrap_id):
-    return redirect('scraplist')

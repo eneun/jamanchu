@@ -32,3 +32,23 @@ def meeting_new(request):
     else:
         form = MeetingForm()
         return render(request, 'meeting/new.html', {'form': form})
+
+def edit(request):
+    return render(request, 'meeting/edit.html')
+
+def meeting_update(request, meeting_id):
+    meeting = get_object_or_404(Meeting, pk=meeting_id)
+    if request.method == 'POST':
+        form = MeetingForm(request.POST, instance=meeting)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
+            return redirect('detail', meeting_id=meeting.pk)
+    else:
+        form = MeetingForm(instance=meeting)
+        return render(request, 'meeting/edit.html', {'form': form})
+
+def meeting_destroy(request, meeting_id):
+    meeting = get_object_or_404(Meeting, pk=meeting_id)
+    meeting.delete()
+    return redirect('listpage')
