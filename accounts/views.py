@@ -10,14 +10,14 @@ def signup(request):
         if request.POST['password1'] == request.POST['password2']:
             try:
                 user = User.objects.get(username=request.POST['username'])
-                return render(request, 'accounts/signup.html', {'error': 'Username has already been taken'})
+                return render(request, 'accounts/signup.html', {'error': '이미 사용중인 닉네임입니다.'})
             except User.DoesNotExist:
                 user = User.objects.create_user(
                     request.POST['username'], password=request.POST['password1'])
             auth.login(request, user)
-            return redirect('index')
+            return redirect('mypage')
         else:
-            return render(request, 'accounts/signup.html', {'error': 'Passwords must match'})
+            return render(request, 'accounts/signup.html', {'error': '비밀번호가 일치하지 않습니다.'})
     else:
         # User watns to enter info
         return render(request, 'accounts/signup.html')
@@ -29,9 +29,9 @@ def login(request):
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return redirect('listpage')
+            return redirect('mypage')
         else:
-            return render(request, 'accounts/login.html', {'error': 'username or password is incorrect.'})
+            return render(request, 'accounts/login.html', {'error': '닉네임이나 비밀번호가 올바르지 않습니다.'})
     else:
         return render(request, 'accounts/login.html')
 

@@ -48,7 +48,7 @@
 position : left;
 margin-right : 300px; 
 padding : auto; 
-background : #F9DC2A;
+background : #ffde7b;
 padding : 15px;
 padding-left : 25px;
 padding-right : 25px;
@@ -64,7 +64,7 @@ margin-bottom: 2rem;
 position : right;
 margin-left : 300px;
 padding : auto; 
-background : #6E37FF;
+background : #875aff;
 padding : 15px;
 padding-left : 25px;
 padding-right : 25px;
@@ -132,7 +132,7 @@ overflow: hidden;
 word-break:break-all;}
 
 .sent h3 {
-color : #ffffff;}
+color : white;}
 
 .letter_container h4 {
 text-align : right;

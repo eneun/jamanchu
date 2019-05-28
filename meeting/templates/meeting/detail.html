@@ -17,7 +17,7 @@
         <h5 class='created_at'>{{ meeting.created_at }}</h5>
     </div>
     <div class='category_zone'>
-        <h5 class='category'>분류 : {{ meeting.category }}</h5>
+        <h5 class='category'>카테고리 : {{ meeting.category }}</h5>
     </div>
     <div class="time_zone">
         <h5>일자 : {{ meeting.date|date:"n월 j일" }} {{ meeting.start_time|time:"gA" }} ~ {{ meeting.end_time|time:"gA" }}</h5>
@@ -29,27 +29,29 @@
         <h5 class='author'>작성자 {{ meeting.user.username }}</h5>
         <h5 class='profile_content'>{{ meeting.user.profile.content|linebreaks }}</h5>
     </div>
-    <div class='message_scrap_zone'>
-        <a href="{% url 'createmessage' meeting.id %}" class='message'>
-            <i class="far fa-paper-plane fa-lg"></i> 쪽지 보내기
-        </a>
-        <a href="{% url 'scrap' meeting.id %}" class='scrap'>
-            {% if scrap %}
-                    <i class="fas fa-star fa-lg"></i> 스크랩 취소
-            {% else %}
-                    <i class="far fa-star fa-lg"></i> 스크랩
-            {% endif %}
-        </a>
+    <div class='button_zone'>
+        {% if meeting.user == request.user %}
+            <a href="{% url 'meetingupdate' meeting.id %}" class='detail_button'>수정하기</a>
+            <a href="{% url 'meetingdestroy' meeting.id %}" class='detail_button' onclick="return confirm('정말 삭제하시겠습니까?')">삭제하기</a>
+        {% else %}
+            <a href="{% url 'createmessage' meeting.id %}" class='detail_button'>
+                <i class="far fa-paper-plane fa-lg"></i> 쪽지 보내기
+            </a>
+            <a href="{% url 'scrap' meeting.id %}" class='detail_button'>
+                {% if scrap %}
+                        <i class="fas fa-star fa-lg"></i> 스크랩 취소
+                {% else %}
+                        <i class="far fa-star fa-lg"></i> 스크랩
+                {% endif %}
+            </a>
+        {% endif %}
     </div>
-    {% if meeting.user == request.user %}
-        <a href="{% url 'meetingupdate' meeting.id %}">수정하기</a>
-        <a href="{% url 'meetingdestroy' meeting.id %}" onclick="return confirm('정말 삭제하시겠습니까?')">삭제하기</a>
-    {% endif %}
+    
 </div>
     
 
 
-<section class="listB">
+{% comment %} <section class="listB">
     <h1> 이런 만남 어떤가요?  </h1>
     <div class="detail_container">
         <article>
@@ -83,17 +85,23 @@
             <br>
         </article>
     </div>
-</section>
+</section> {% endcomment %}
     
 <div class="btn-group">
-   <a href="{% url 'createmessage' meeting.id %}"> <i class="far fa-paper-plane fa-lg"></i></i></i> 쪽지 보내기</a>
-   <a href="{% url 'scrap' meeting.id %}">
-        {% if scrap %}
-                <i class="fas fa-star fa-lg"></i> 스크랩 취소
-        {% else %}
-                <i class="far fa-star fa-lg"></i> 스크랩
-        {% endif %}
-   </a>
+    {% if meeting.user == request.user %}
+        <a href="{% url 'meetingupdate' meeting.id %}" class='detail_button'>수정하기</a>
+        <a href="{% url 'meetingdestroy' meeting.id %}" class='detail_button' onclick="return confirm('정말 삭제하시겠습니까?')">삭제하기</a>
+    {% else %}
+        <a href="{% url 'createmessage' meeting.id %}"> <i class="far fa-paper-plane fa-lg"></i></i></i> 쪽지 보내기</a>
+        <a href="{% url 'scrap' meeting.id %}">
+                {% if scrap %}
+                        <i class="fas fa-star fa-lg"></i> 스크랩 취소
+                {% else %}
+                        <i class="far fa-star fa-lg"></i> 스크랩
+                {% endif %}
+        </a>
+    {% endif %}
+    
 </div>
 
 {% endblock %}

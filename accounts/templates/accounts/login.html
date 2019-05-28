@@ -26,26 +26,8 @@
       <input type="submit" class='btn btn-primary' value='로그인!'>
 
       <p class="message"><a href="{% url 'signup' %}">회원가입</a></p>
-      <p class="message"><a href="#">아이디/비밀번호 찾기</a></p>
       <p class="message"><a href="{% url 'listpage' %}"><b>둘러보기!</b></a></p>
     </div> 
   </form>
 </div>
-
-
-<h1>로그인 페이지</h1>
-
-<form action="{% url 'login' %}" method='POST'>
-    {% csrf_token %}
-    <p>Username: </p>
-    <br/>
-    <input name="username" type="text" value="">
-    <br/>
-    Password:
-    <br/>
-    <input name="password" type="password" value="">
-    <br/>
-    <input type="submit" class='btn btn-primary' value='로그인!'>
-</form>
-
 {% endblock %}

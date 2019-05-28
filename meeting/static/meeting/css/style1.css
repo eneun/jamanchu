@@ -191,24 +191,36 @@
 } 
 
 
+
 /* 예은 */
+.content {
+    background-color: #f3f3f3;
+}
 @media (min-width: 768px) {
     .meeting_container {
-        margin-left: 1.5rem;
-        margin-right: 1.5rem;
+        margin-left: 13rem;
+        margin-right: 13rem;
+        padding-bottom: 4rem;
+    }
+}
+@media (max-width: 767px) {
+    .meeting_container {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        padding-bottom: 4rem;
     }
 }
 .inner-block {
     padding: 1rem;
-    margin: 1rem;
+    margin-bottom: 1rem;
     transition: 0.5s all ease;
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-color: #eeeeee;
+    background-color: white;
 }
 .shadow-light {
-    height: 300px;
+    height: 400px;
     -webkit-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.2);
     box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.2);
@@ -225,18 +237,49 @@
     height: 100%;
     width: 100%;
 }
+.meeting_header {
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 0.8rem;
+    color: #2f2e2e;
+    line-height: 1.3;
+
+}
 .meeting_info {
     font-family: 'Didact Gothic', sans-serif;
-    font-size: rem;
-    text-align: center;
     color: black;
-    
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #bdbdbd;
+    height: 150px;
 }
 .meeting_title {
-    font-family: 'BBTreeGB'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGB.woff') format('woff'); font-weight: normal; font-style: normal;
+    font-family: 'Daehan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Daehan.woff') format('woff');
+    font-weight: normal;
     font-size: 1.4rem;
     margin-bottom: 0.3rem;
 }
+.meeting_content {
+    font-family: 'Daehan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Daehan.woff') format('woff');
+    font-weight: normal;
+    color: #2f2e2e;
+}
+.meeting_footer {
+    font-family: 'Daehan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Daehan.woff') format('woff');
+    font-weight: normal;
+    color: #2f2e2e;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
 a:hover {
     text-decoration: none;
+}
+
+@font-face {
+    font-family: 'Daehan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Daehan.woff') format('woff');
+    font-weight: normal;
+    font-style: normal; 
 }

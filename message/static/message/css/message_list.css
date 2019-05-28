@@ -1,9 +1,11 @@
 .box{
     /* width: 1200px; */
     /* display: grid; */
+    min-height: 100vh;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap: 15px;
     margin: 0 auto;
+    padding-bottom: 5rem;
 }
 .box a {
     text-decoration: none;
@@ -11,7 +13,7 @@
 .card{
     position: relative;
     /* width: 300px; */
-    width: 80%;
+    width: 40%;
     height: 150px;
     background: #fff;
     margin: 3rem auto;
@@ -81,7 +83,7 @@ bottom: 80px;
     padding-left: 1rem;
     padding-top: 1rem;
     color: grey;
-    font-size: 0.4rem;
+    font-size: 0.6rem;
     margin-bottom: 1rem;
 }
 .card .details{

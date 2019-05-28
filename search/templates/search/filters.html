@@ -8,50 +8,54 @@
     <link rel="stylesheet" type="text/css" href="{% static 'search/css/filters_style.css' %}" >
 </head>
 
-<form action="{% url 'result' %}" method="GET">
-    <h3> 찾고 싶은 만남을 검색해주세요! </h3>
-        <div class="form-group">
-            <label for="exampleFormControlInput1">키워드 검색</label>
-            <input type="type" name='keyword' class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="제목, 내용 검색">
-        </div>
-    
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">만남 카테고리</label>
-            <select class="form-control form-control-lg" name='cate' id="exampleFormControlSelect1">
-                <option value='all'> 전체 </option>
-                <option value='meal'>식사</option>
-                <option value='culture'>문화</option>
-                <option value='sports'>스포츠/레저</option>
-                <option value='hobby'>취미/힐링</option>
-                <option value='study'>스터디</option>
-                <option value='etc'>기타</option>
-            </select>
-        </div>
-          
-        <div class="form-group">
-            <label for="date"> 만남 날짜</label>
-            <input type="date" name='date' class="form-control form-control-lg" id="date">
-        </div>
-    
-        <div class="form-group">
-            <div class="row">
-                <div class="col">
-                    <label for="time">  시작 시간 </label>
-                    <input type="time" name='stime' class="form-control form-control-lg" id="time">    
+<div class='filter_container'>
+    <div class='filter_box'>
+        <form action="{% url 'result' %}" method="GET">
+            <h3 class='filter_title'> <i class="fas fa-search fa-lg"></i>만남검색 </h3>
+                <div class="form-group mb-5 mt-5">
+                    <label for="exampleFormControlInput1"><i class="fas fa-key"></i> 키워드 검색</label>
+                    <input type="type" name='keyword' class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="제목, 내용 검색">
                 </div>
+            
+                <div class="form-group mb-5">
+                    <label for="exampleFormControlSelect1"><i class="fas fa-folder-open"></i> 만남 카테고리</label>
+                    <select class="form-control form-control-lg" name='cate' id="exampleFormControlSelect1">
+                        <option value='all'> 전체 </option>
+                        <option value='meal'>식사</option>
+                        <option value='culture'>문화</option>
+                        <option value='sports'>스포츠/레저</option>
+                        <option value='hobby'>취미/힐링</option>
+                        <option value='study'>스터디</option>
+                        <option value='etc'>기타</option>
+                    </select>
+                </div>
+                
+                <div class="form-group mb-5">
+                    <label for="date"><i class="fas fa-calendar-week"></i> 만남 날짜</label>
+                    <input type="date" name='date' class="form-control form-control-lg" id="date">
+                </div>
+            
+                <div class="form-group mb-5">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="time"><i class="fas fa-clock"></i> 시작 시간 </label>
+                            <input type="time" name='stime' class="form-control form-control-lg" id="time">    
+                        </div>
 
-                <div class="col">  
-                    <label for="time">  끝 시간 </label>
-                    <input type="time" name='etime' class="form-control form-control-lg" id="time">
-               </div>
-            </div>
-        </div>
-             
-        <div class="btn2">
-            <button type="submit"> <i class="fas fa-search fa-lg"></i> 만남 검색</button>
-        </div>
-    
-</form>
+                        <div class="col-6">  
+                            <label for="time"><i class="fas fa-clock"></i> 끝 시간 </label>
+                            <input type="time" name='etime' class="form-control form-control-lg" id="time">
+                    </div>
+                    </div>
+                </div>
+                    
+                <div class='button'>
+                    <button type="submit" class='btn btn-block filterbtn'> <i class="fas fa-search fa-lg"></i>검색하기</button>
+                </div>
+            
+        </form>
+    </div>
+</div>
 
 {% endblock %}
 
