@@ -2,10 +2,12 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from .forms import ProfilesForm
 from meeting.models import Meeting
+from scrap.models import Scrap
 
 # Create your views here.
 def mypage(request):
-    return render(request, 'profiles/mypage.html')
+    scraps = Scrap.objects.filter(user=request.user)
+    return render(request, 'profiles/mypage.html', {'scraps': scraps})
 
 def new(request):
     return render(request, 'profiles/new.html')

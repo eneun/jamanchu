@@ -61,31 +61,6 @@
     {% endfor %}
 </div>
 
-
-
-
-{% comment %} <section class = "listA">
-    <div class="listpage_container">
-        <h1> 실시간 만남리스트 </h1>
-        <table>
-            <tbody>
-            
-                {% for meeting in meetings.all %}
-                <tr>
-                    <a class='shadowlink' href="{% url 'detail' meeting.id %}">
-                    <h2>제목 : {{ meeting.title }}</h2><p>
-                    <h3>내용 : {{ meeting.summary}}</h3><p>
-                    날짜 : {{ meeting.date }}
-                    
-                
-                </tr></a>
-                {% endfor %}
-            </tbody>
-        </table>
-
-    </div>
-</section> {% endcomment %}
-
 <div class="btn-group">
    <a href="{% url 'filters' %}"> <i class="fas fa-search fa-lg"></i> 만남 검색</a>
    <a href="{% url 'meetingcreate' %}"><i class="fas fa-plus fa-lg"></i> 만남 등록</a>

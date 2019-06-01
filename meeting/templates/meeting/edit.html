@@ -3,11 +3,59 @@
 
 <head>
     {% load staticfiles %}
-    <link rel="stylesheet" type="text/css" href="{% static 'meeting/css/add.css' %}" >
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'meeting/css/add.css' %}" > {% endcomment %}
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'search/css/filters_style.css' %}" >
 </head>
 
-<form method="POST">
+<div class='filter_container'>
+    <div class='filter_box'>
+        <form method='POST'>
+            {% csrf_token %}
+            <h3 class='filter_title'> <i class="fas fa-check fa-lg"></i>만남수정 </h3>
+                <div class="form-group mb-5 mt-5">
+                    <label for="exampleFormControlInput1"><i class="fas fa-key"></i> 만남 제목</label>
+                    {{ form.title }}
+                </div>
+
+                <div class="form-group mb-5 mt-5">
+                    <label for="exampleFormControlInput1"><i class="fas fa-key"></i> 만남 내용</label>
+                    {{ form.body }}
+                </div>
+            
+                <div class="form-group mb-5">
+                    <label for="exampleFormControlSelect1"><i class="fas fa-folder-open"></i> 만남 카테고리</label>
+                    {{ form.category }}
+                </div>
+                
+                <div class="form-group mb-5">
+                    <label for="date"><i class="fas fa-calendar-week"></i> 만남 날짜</label>
+                    {{ form.date }}
+                </div>
+            
+                <div class="form-group mb-5">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="time"><i class="fas fa-clock"></i> 시작 시간 </label>
+                            {{ form.start_time }}
+                        </div>
+
+                        <div class="col-6">  
+                            <label for="time"><i class="fas fa-clock"></i> 끝 시간 </label>
+                            {{ form.end_time }}
+                        </div>
+                    </div>
+                </div>
+                    
+                <div class='button'>
+                    <button type="submit" class='btn btn-block filterbtn'> <i class="fas fa-check fa-lg"></i>수정하기</button>
+                </div>
+            
+        </form>
+    </div>
+</div>
+
+{% comment %} <form method="POST">
     {% csrf_token %}
     <h3 align="left"> 만남을 수정해주세요 </h3>
     <div class="form-group">
@@ -42,6 +90,6 @@
     <div class="btn1">
         <button type="submit"> <i class="fab fa-pushed"></i> 만남 등록</button>
     </div>
-</form>
+</form> {% endcomment %}
 
 {% endblock %}

@@ -3,7 +3,7 @@
 {% block content %}
 
 <head>
-    <link rel="stylesheet" type="text/css" href="{% static 'meeting/css/style2.css' %}" />
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'meeting/css/style2.css' %}" /> {% endcomment %}
     <link rel="stylesheet" type="text/css" href="{% static 'meeting/css/detail.css' %}" />
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
@@ -31,8 +31,8 @@
     </div>
     <div class='button_zone'>
         {% if meeting.user == request.user %}
-            <a href="{% url 'meetingupdate' meeting.id %}" class='detail_button'>수정하기</a>
-            <a href="{% url 'meetingdestroy' meeting.id %}" class='detail_button' onclick="return confirm('정말 삭제하시겠습니까?')">삭제하기</a>
+            <a href="{% url 'meetingupdate' meeting.id %}" class='detail_button'><i class="far fa-edit"></i> 수정하기</a>
+            <a href="{% url 'meetingdestroy' meeting.id %}" class='detail_button' onclick="return confirm('정말 삭제하시겠습니까?')"><i class="far fa-trash-alt"></i> 삭제하기</a>
         {% else %}
             <a href="{% url 'createmessage' meeting.id %}" class='detail_button'>
                 <i class="far fa-paper-plane fa-lg"></i> 쪽지 보내기

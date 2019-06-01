@@ -10,14 +10,9 @@
     
 </head>
 
-<nav class="sub_navbar navbar-light bg-light text-right">
-    <div class="form-inline">
-        <a class="btn btn-outline-success" href="{% url 'filters' %}"> <i class="fas fa-search fa-lg"></i> 만남 검색</a>
-        <a class="btn btn-outline-success" href="{% url 'meetingcreate' %}"> <i class="fas fa-plus fa-lg"></i> 만남 등록</a>
-    </div>
-</nav>
-
-
+<div class="page_title">
+    내가 등록한 만남
+</div>
 <div class='row meeting_container' style='padding-right:0;'>
     {% for meeting in meetings.all %}
         <div class='col-md-4 col-sm-12'>
@@ -42,7 +37,13 @@
                         <div class="meeting_title">
                             {{ meeting.title }}
                         </div>
-                        {{ meeting.date }}
+                        <div class="meeting_content">
+                            {{ meeting.summary }}
+                        </div>
+                    </div>
+                    <div class="meeting_footer">
+                        <div>{{ meeting.date|date:"n월 j일" }}</div>
+                        <div>스크랩 수 : {{ meeting.scrapped.count }}</div>
                     </div>
                 </div>
             </a>
@@ -54,7 +55,7 @@
 
 
 
-<section class = "listA">
+{% comment %} <section class = "listA">
     <div class="listpage_container">
         <h1> 실시간 만남리스트 </h1>
         <table>
@@ -74,7 +75,7 @@
         </table>
 
     </div>
-</section>
+</section> {% endcomment %}
 
 <div class="btn-group">
    <a href="{% url 'filters' %}"> <i class="fas fa-search fa-lg"></i> 만남 검색</a>

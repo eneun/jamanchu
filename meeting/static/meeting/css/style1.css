@@ -14,10 +14,18 @@
   --gray-color: #ddd;
 }
 
+body {
+    background-color: #f3f3f3;
+}
+
 /* sub nav*/
 .sub_navbar{
     display: flex;
     justify-content: flex-end;   
+    font-family: 'Daehan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Daehan.woff') format('woff');
+    font-weight: normal;
+    font-style: normal; 
 }
 
 .btn-outline-success{
@@ -194,7 +202,7 @@
 
 /* 예은 */
 .content {
-    background-color: #f3f3f3;
+    min-height: 100vh;
 }
 @media (min-width: 768px) {
     .meeting_container {
@@ -275,6 +283,25 @@
 }
 a:hover {
     text-decoration: none;
+}
+
+.page_title {
+    font-family: 'Daehan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Daehan.woff') format('woff');
+    font-weight: normal;
+    /* font-style: normal;  */
+    margin-left: 15rem;
+    margin-right: 15rem;
+    margin-top: 7rem;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+}
+@media (max-width: 767px) {
+    .page_title {
+        margin-left: 3rem;
+        margin-right: 3rem;
+        padding-bottom: 1rem;
+    }
 }
 
 @font-face {

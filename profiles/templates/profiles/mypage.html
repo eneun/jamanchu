@@ -3,7 +3,7 @@
 {% load staticfiles %}
 
 <head>
-    <link rel="stylesheet" type="text/css" href="{% static 'profiles/css/mypage.css' %}">
+    <link rel="stylesheet"   type="text/css" href="{% static 'profiles/css/mypage.css' %}">
     {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'profiles/css/my_page.css' %}"> {% endcomment %}
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
@@ -34,7 +34,7 @@
   </div>
 </div> {% endcomment %}
 
-<h3>  {{ user.username }}님의 마이페이지</h3> <br>
+<h3> {{ user.username }}님의 마이페이지</h3> <br>
 
 {% if user.profile %}
 
@@ -42,9 +42,9 @@
   <h2 class="mypage">MYPAGE </h2>
     <div class="card">    
       <div class="card-body">
-          <h5 class='card-title'><i class="fas fa-file-signature"></i> 닉네임</h5>
+          <h5 class='card-title'><i class="fas fa-file-signature"></i> 아이디</h5>
           <p class="card-text">{{ user.username }}</p>
-          <h5 class='card-title'> <i class="fas fa-mobile-alt"></i> 연락처</h5>
+          <h5 class='card-title'> <i class="fas fa-mobile-alt"></i> 이메일</h5>
           <p class="card-text">{{ user.profile.email }}</p>
       </div>
     </div>
@@ -70,16 +70,18 @@
   <div class="card-group">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title"><i class="fas fa-star"></i> 스크랩함</h5>
-        <p class="card-text">관심 있는 만남 목록을 표시합니다.</p>
+        <h5 class="card-title"><i class="fas fa-star"></i> 스크랩한 만남 수</h5>
+        {% comment %} <p class="card-text">관심 있는 만남 목록을 표시합니다.</p> {% endcomment %}
+        <p class="count">{{ scraps.count }}</p>
         <a href="{% url 'scraplist' %}"><i class="fas fa-link"></i> 스크랩함으로 가기</a>
       </div>
     </div>
 
   <div class="card">
       <div class="card-body">
-        <h5 class="card-title"><i class="far fa-plus-square"></i> 등록한 만남</h5>
-        <p class="card-text"> 자신이 등록한 만남 목록을 표시합니다. </p>
+        <h5 class="card-title"><i class="far fa-plus-square"></i> 등록한 만남 수</h5>
+        {% comment %} <p class="card-text"> 자신이 등록한 만남 목록을 표시합니다. </p> {% endcomment %}
+        <p class="count">{{ user.meetings.count }}</p>
         <a href="{% url 'mymeeting' %}"> <i class="fas fa-link"></i> 만남 등록 목록으로 가기</a>
       </div>
     </div>
