@@ -10,11 +10,14 @@
 <section class = "letter">
 
     <div class="letter_container">
-        {% if not messages.first.sender == request.user %}
-            <h1> {{ messages.first.sender }} 님과의 쪽지 </h1>
-        {% else %}
-            <h1> {{ messages.first.receiver }} 님과의 쪽지 </h1>
-        {% endif %}
+        <div class="letter_container_title">
+        <i class="far fa-envelope-open"></i>
+            {% if not messages.first.sender == request.user %}
+                {{ messages.first.sender }} 님과의 쪽지
+            {% else %}
+                {{ messages.first.receiver }} 님과의 쪽지
+            {% endif %}
+        </div>
 
         {% for message in messages %}
             {% if message.sender == request.user %}

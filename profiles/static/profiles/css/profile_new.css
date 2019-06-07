@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+:root {
+  --main-color: #6E37FF;
+  --yellow-color:#F9DC2A;
+  --light-color: #AD58F7;
+  --white-color: #fff;
+  --orange-color: #ffa000;
+  --large-width: 1300px;
+  --brown-color: #3A3727;
+  --gray-color: #ddd;
+  --black-color: #000;
+  --green-color: #2ba697;
+  --background-color: #fAfAfA;
+  --lightpurple-color: #f0e8f7;
+  --pink-color:rgb(253, 236, 236);
+  --dark-gray-color: rgb(158, 155, 155);
+  --blue-color: rgb(45, 107, 199);
+}
+
+@font-face {
+  font-family: 'Daehan';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Daehan.woff') format('woff');
+  font-weight: normal;
+  font-style: normal; 
+}
+
+body {
+  font-family: 'Daehan';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Daehan.woff') format('woff');
+  font-weight: normal;
+  background: linear-gradient(to bottom, rgb(201, 193, 248), rgb(248, 237, 255));
+}
+
+h2{
+  letter-spacing: 5px;
+  font-family: 'Daehan';
+  text-align: center;
+  font-size: 28px;
+}
+
+.newprofile{
+  font-family: 'Daehan';
+  margin-top: 6rem;
+}
+
+label{
+  font-size: 20px;
+}
+
+.profileInput{
+  background-color: #f3f3f3;
+  border-color: #f3f3f3;
+  border-radius: .3rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  color: #495057;
+  border-style: none;
+  border: 1px solid #ced4da;
+  height: calc(1.5em + 1rem + 2px);
+  width: 100%;
+}
+
+.profileInput2{
+  background-color: #f3f3f3;
+  border-color: #f3f3f3;
+  border-radius: .3rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  color: #495057;
+  border-style: none;
+  border: 1px solid #ced4da;
+  /* height: calc(1.5em + 1rem + 2px); */
+  width: 100%;
+}
+
+.newprofile_container{
+  padding: 20px;
+  margin : 0 auto;
+  width: 1000px;
+  background-color: white;
+  height: 430px;
+}
+
+.saveButton{
+  text-align: center;
+  background-color: 663eff;
+  background-color: var(--main-color);
+  border: none;
+  color: white;
+  padding: 0.8rem;
+  font-size: 17px;
+  letter-spacing: 7px;
+  width: 100%;
+  font-weight: 600;
+  border-radius: .3rem;
+  padding-top:1rem;
+  padding-bottom: 1rem;
+}
+
+.saveButton:hover{
+  border-color: var(--yellow-color);
+  background-color: var(--yellow-color);
+  color: var(--brown-color);  
+}
+
+textarea.form-control {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 90px;
+}
+
+@media (max-width: 767px) {
+  .newprofile_container{
+    padding: 20px;
+    margin : 0 auto;
+    width: 330px;
+    background-color: white;
+    height: 400px;
+  }
+
+  h2{
+    letter-spacing: 5px;
+    font-family: 'Daehan';
+    text-align: center;
+    font-size: 20px;
+  }
+
+  label{
+    font-size: 15px;
+  }
+
+  .saveButton{
+    /* font-family: 'Daehan'; */
+    /* font-weight: 600; */
+    font-size: 1.1rem;
+  }
+
+  .profileInput{
+    font-size: 15px;
+  }
+
+  .profileInput2{
+    font-size: 15px;
+  }
+}
+
+.profilesavebtn {
+    background-color: var(--main-color);
+    border: none;
+    color: white;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    letter-spacing: 10px;
+}

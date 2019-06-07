@@ -1,61 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
-{% load staticfiles %}
 
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'message/css/list_message_style.css' %}" >
+    {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'message/css/message_list.css' %}">
 </head>
 
-
-
-<div class="box">
+<body>
+<div class="listmessage_container">
+<div class="listmessgae_container_title">
+    <i class="far fa-envelope"></i> 쪽지함
+</div>
     {% for message in messages %}
         {% ifchanged message.sender or message.receiver or message.meeting %}
+        <div class="card">
             <a href="{% url 'showmessage' message.id %}">
-                <div class="card">
-                    {% comment %} <div class="imgBx">
-                        <img src="https://images.unsplash.com/photo-1532123675048-773bd75df1b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
-                    </div> {% endcomment %}
-                    <div class="simple_info">
-                        <strong>{{ message.sender }}</strong>  {{ message.created_at }}<br/>
-                        <strong style="font-size: 1rem;">게시글 : {{ message.meeting }}</strong>
-                    </div>
-                    
-                    <div class="details">
-                        <h2>{{ message.summary }}<br></h2>
-                    </div>
+                <div class="simple_info">
+                    {% if message.sender == request.user %}
+                        <h3><i class="fa fa-reply icon-red" aria-hidden="true" id="send"></i> 보낸 쪽지</h3> <h4>|  {{message.receiver}} </h4>  
+                    {% else %}
+                        <h3><i class="fa fa-share icon-blue" aria-hidden="true" id="recv"></i> 받은 쪽지</h3> <h4>|  {{ message.sender }} </h4> 
+                    {% endif %}
+
+                    <h5>{{ message.summary }}<br></h5>
+                    <h6> {{ message.created_at }}</h6>
+                    <hr>
+                    <h2>「{{ message.meeting }}」 만남으로부터 온 쪽지입니다.</h2>
                 </div>
             </a>
+        </div>
+        
         {% endifchanged %}
     {% endfor %}
 </div>
-
-
-
-
-{% comment %} <section class = "listM">
-    <h1> 쪽지함 </h1>
-    <div class="messagebox_container">
-
-        {% for message in messages %}
-            {% ifchanged message.sender or message.receiver or message.meeting %}
-                <div class="messagebox_list">
-                    <a href="{% url 'showmessage' message.id %}">
-                        <h2> 보낸이: {{ message.sender }} </h2>
-                        <h2> 받는이: {{ message.receiver }} </h2>
-                        <h3> {{ message.summary }} </h3>
-                        <h4> {{ message.created_at }}</h4>
-                        <h5> *참고* 연결된 만남 제목: {{ message.meeting }} </h5>
-                    </a>
-                </div>
-            {% endifchanged %}
-        {% endfor %}
-    </div>
-</section> {% endcomment %}
-
-{% comment %} show밑에 add.html에 form 렌더해서 글 쓸 수 있게 해줘야함! new는 첫 메시지 쓰는 칸!! {% endcomment %}
+</body>
 
 {% endblock %}

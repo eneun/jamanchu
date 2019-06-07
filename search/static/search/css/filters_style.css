@@ -70,12 +70,14 @@ h3 {
  */
 
 /* 예은 */
+body {
+    background: linear-gradient(to bottom, rgb(201, 193, 248), rgb(248, 237, 255));
+}
 .filter_container {
     font-family: 'Daehan';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Daehan.woff') format('woff');
     font-weight: normal;
-    background: linear-gradient(to bottom, rgb(201, 193, 248), rgb(248, 237, 255));
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
 }
 @media (min-width: 768px) {
     .filter_container{
@@ -95,6 +97,7 @@ h3 {
 .filter_title {
     text-align: center;
     letter-spacing: 15px;
+    font-size: 1.5rem;
 }
 .form-control {
     background-color: #f3f3f3;

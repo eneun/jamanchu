@@ -1,40 +1,30 @@
-.box{
-    /* width: 1200px; */
-    /* display: grid; */
-    min-height: 100vh;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-gap: 15px;
-    margin: 0 auto;
-    padding-bottom: 5rem;
+@charset "UTF-8";
+
+body{
+    background-color:#f3f3f3;
 }
-.box a {
+
+.listmessage_container a {
     text-decoration: none;
 }
+
+.listmessgae_container_title {
+    text-align: center;
+    font-family: 'Daehan';
+    font-size: 1.5rem;
+}
+
 .card{
     position: relative;
-    /* width: 300px; */
-    width: 40%;
-    height: 150px;
-    background: #fff;
+    width:100%;
+    height: 170px;
+    background:white;
     margin: 3rem auto;
     border-radius: 4px;
     box-shadow:0 2px 10px rgba(0,0,0,.2);
 }
-@media (max-width: 767px) {
-    .card{
-        position: relative;
-        /* width: 300px; */
-        width: 80%;
-        height: 150px;
-        background: #fff;
-        margin: 3rem auto;
-        border-radius: 4px;
-        box-shadow:0 2px 10px rgba(0,0,0,.2);
-    }
-}
-.card:before,
-.card:after
-{
+
+.card:before, .card:after {
     content:"";
     position: absolute;
     top: 0;
@@ -47,68 +37,202 @@
     z-index:-1;
 }
 .card:hover:before{
-    transform: rotate(20deg);
-    box-shadow: 0 2px 20px rgba(0,0,0,.2);
-}
-.card:hover:after{
     transform: rotate(10deg);
     box-shadow: 0 2px 20px rgba(0,0,0,.2);
 }
-.card .imgBx{
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    bottom: 10px;
-    right: 10px;
-    background: #222;
-    transition: 0.5s;
-    z-index: 1;
+.card:hover:after{
+    transform: rotate(5deg);
+    box-shadow: 0 2px 20px rgba(0,0,0,.2);
 }
 
-.card:hover .imgBx
-{
-bottom: 80px;
+.icon-red {color: red;}
+.icon-blue {color: blue;}
+
+.card .simple_info{
+    font-family: 'Daehan';
+    /* padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    padding-top: 1rem;
+    padding-bottom: 1px; */
+    color:black;
 }
 
-.card .imgBx img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+h1{
+    font-family: 'Daehan';
+    font-size: 35px;
+    text-align:center;
+    letter-spacing: 10px;
+}
+
+.card .simple_info h2{ /*만남제목*/
+    font-size: 15px;
+    margin-left:12px;
+    margin-bottom:0px;
+}
+
+.card .simple_info h3{ /*수발신표시*/
+    font-size: 20px;
+    margin-bottom:10px;
+    margin-left:12px;
+}
+
+
+.card .simple_info h4{ /*쪽지상대 아이디*/
+    font-size: 15px;
+    margin-top:5px;
+    margin-left:12px;
+}
+
+.card .simple_info h3,h4 {
+    display:inline;
+}
+
+.card .simple_info h5{ /*쪽지내용*/
+    font-size: 23px;
+    margin-top:15px;
+    margin-left:12px;
+}
+
+.card .simple_info h6{ /*쪽지수발신 날짜*/
+    font-size: 12px;
+    text-align:right;
+    margin-right: 7px;
+    font-weight: 600;
+    color: #777;
+}
+
+
+hr {
+    /* padding-left:-10px;
+    margin-bottom:10px; */
+    width:98%;
+    height:1.5px;
+    background-color:purple;
+}
+
+
+/* 작은 화면 전용 설정 */
+@media (max-width: 767px) {
+
+.listmessage_container{
+    margin: 1rem;
+}
+
+.listmessgae_container_title {
+    text-align: center;
+    font-family: 'Daehan';
+    font-size: 1.5rem;
+}
+
+.card{
+    height:140px;
+    margin: 1.5rem auto;}
+
+h1 {
+    font-size: 25px;
+} 
+
+.card .simple_info {
+    padding: 0.5rem;
+}
+.card .simple_info h2{ /*만남제목*/
+    font-size: 10px;
+}
+
+.card .simple_info h3{ /*수발신표시*/
+    font-size: 15px;
+    margin-bottom:10px;
+    margin-left:12px;
+}
+
+
+.card .simple_info h4{ /*쪽지상대 아이디*/
+    font-size: 10px;
+    margin-top:5px;
+    margin-left:12px;
+}
+
+.card .simple_info h5{ /*쪽지내용*/
+    font-size: 18px;
+}
+
+.card .simple_info h6{ /*쪽지수발신 날짜*/
+    font-size: 8px;
+}
+
+hr {
+    padding-left:-10px;
+    margin-bottom:10px;
+    width:98%;
+    height:1px;
+    background-color:purple; }
+}
+
+/* 중간 화면 전용 설정 */
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+.listmessage_container{
+    margin: 10px;
+}
+
+.listmessgae_container_title {
+    text-align: center;
+    font-family: 'Daehan';
+    font-size: 1.5rem;
 }
 
 .card .simple_info{
-    padding-left: 1rem;
+    font-family: 'Daehan';
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
     padding-top: 1rem;
-    color: grey;
-    font-size: 0.6rem;
-    margin-bottom: 1rem;
-}
-.card .details{
-    /* position: absolute;
-    left: 10px;
-    right: 10px;
-    bottom: 10px; */
-    /* text-align: center;
-    margin: auto; */
-    padding-left: 1rem;
+    padding-bottom: 1px;
+    color:black;
 }
 
-.card .details h2{
-    margin: 0;
-    padding: 0;
-    font-weight: 600;
-    font-size: 15px;
-    color: #777;
-    text-transform: uppercase;
-} 
+hr {
+    padding-left:-10px;
+    margin-bottom:10px;
+    width:98%;
+    height:1px;
+    background-color:purple;
+}
 
-/* .card .details h2 span{
-    font-weight: 500;
-    font-size: 16px;
-    color: grey;
-    display: block;
-    margin-top: 5px;
-}  */
+}
+
+ /* 큰 화면 전용 설정 */
+ @media (min-width: 1025px) {
+
+.listmessage_container{
+    margin-left:500px;
+    margin-right:500px;
+    margin-top:150px;
+    margin-bottom: 150px;
+}
+
+.card .simple_info{
+    font-family: 'Daehan';
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    padding-top: 1rem;
+    padding-bottom: 1px;
+    color:black;
+}
+
+hr {
+    padding-left:-10px;
+    margin-bottom:10px;
+    width:98%;
+    height:1.5px;
+    background-color:purple;
+}
+ }
+
+
+
+@font-face {
+    font-family: 'Daehan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Daehan.woff') format('woff');
+    font-weight: normal;
+    font-style: normal; 
+}

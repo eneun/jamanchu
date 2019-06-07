@@ -26,6 +26,10 @@ body {
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Daehan.woff') format('woff');
     font-weight: normal;
     font-style: normal; 
+    background-color: white;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
 }
 
 .btn-outline-success{
@@ -203,6 +207,7 @@ body {
 /* 예은 */
 .content {
     min-height: 100vh;
+    margin-top: 65px;
 }
 @media (min-width: 768px) {
     .meeting_container {

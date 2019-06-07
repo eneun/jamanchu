@@ -34,3 +34,4 @@
 20. 5/21 scrap scrap.models의 meeting 필드에서 unique=True로 인한 오류 수정
 21. 5/21 내가 등록한 만남 보기 페이지 생성
 22. 5/22 meeting 앱 u,d 백엔드 완성
+23. 6/1 CSS 수정

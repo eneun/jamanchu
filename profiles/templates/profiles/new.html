@@ -1,10 +1,36 @@
-<h1>Profiles/new.html</h1>
-<a href="{% url 'mypage' %}">뒤로 가기</a>
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
 
-<form method="POST">
-    {% csrf_token %}
-    <table>
-        {{ form }}
-    </table>
-    <input type='submit' value='등록'>
-</form>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'profiles/css/profile_new.css' %}">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+
+<div class="newprofile">
+        <div class="newprofile_container">
+            <h2><i class="far fa-id-card"></i> 프로필작성</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                <br>
+                <label> <i class="fas fa-at"></i> 이메일</label>
+                <br>
+                {{form.email}}
+                </div>
+
+                <div class="form-group">
+                 <label> <i class="fas fa-id-badge"></i> 소개글</label>
+                 <br>
+                {{form.content}}
+                </div>
+
+                <br>
+                {% comment %} <input type='submit' value='&#xf1e0 저장하기' class='fa saveButton'> {% endcomment %}
+                <button type='submit' class='btn btn-block profilesavebtn'><i class='fas fa-share-alt'></i> 저장하기</button>
+            </form>
+        </div>
+</div>
+
+{% endblock %}

@@ -1,79 +1,120 @@
 @charset "UTF-8";
 
-.newmessage {
-overflow: hidden;
-margin : auto;
+body{
+    background-color:#f3f3f3;
 }
 
-
 .newmessage_container {
-margin-left : 10px;
-margin-left : 10px;
-padding-top : 25px;
-padding-bottom : 20px;
-padding-left : 30px;
-padding-right : 30px;
-border : solid 1px black;
-border : solid 1px var(--gray-color); }
+    margin-top:160px;
+    margin-left:520px;
+    margin-right:520px;
+    border:transparent;
+    font-family: 'Daehan';
+}
 
+.newmessage_container .newmessage_form{
+    padding-top:25px;
+    font-family: 'Daehan';
+}
 
-.newmessage h1 {
-text-align : center;
-padding-bottom : 5px;
-font-size : 40px; 
-font-family: 'East Sea Dokdo', cursive;
-padding-top : 30px; }
+textarea.form-control {
+    width:100%;
+    height: 300px;
+    margin-bottom:20px;
+}
+.newmessage_container h1 {
+    display:inline;
+    padding-bottom : 5px;
+    font-size : 40px; 
+    font-family: 'Daehan', cursive;
+    padding-top : 20px;
+    letter-spacing: 5px; }
 
+.newmessage_container h2 {
+    display:inline;
+    padding-bottom : 5px;
+    font-size : 25px; 
+    font-family: 'Daehan', cursive;
+    padding-top : 25px;
+    letter-spacing: 2px; }
 
-.send_button button{
-    border-radius: 10px;
-    width: 100%;
-    height: 3rem;
-    letter-spacing: 0.3rem;
-     font-size: 1.1rem;
-     letter-spacing: 5px;
-     border-color: var(--main-color);
-     border-width: 2px;
-     border-style: solid;
-    background-color: var(--white-color);
-    background-color: #fff;
-    font-weight: bold;
-    text-align: center;
-    line-height: 1.5rem;
-    color: var(--main-color);
- }
- 
- .send_button button:hover{
-     border-color: var(--yellow-color);
-     background-color: var(--yellow-color);
-     color: var(--white-color);
- }
- 
+.filterbtn {
+    background-color: 663eff;
+    background-color: var(--main-color);
+    border: none;
+    color: white;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    letter-spacing: 10px;
+}
+
 
 /* 작은 화면 전용 설정 */
 @media (max-width: 767px) {
 
 .newmessage {
-margin : 5px; }
+    margin : 5px; }
 
 .newmessage_container {
-margin : 5px;}
+    margin : 1.5rem;
+    padding-top:25px;}
+
+.newmessage_container .newmessage_form {
+    padding-top:20px;
 }
 
+.newmessage_container h1 {
+    margin-left:1rem;
+    font-size : 18px; 
+    letter-spacing: 3px; }
+}
 
- 
- /* 큰 화면 전용 설정 */
-@media (min-width: 768px) {
+/* 중간 화면 전용 설정 */
+@media (min-width: 768px) and (max-width: 1024px) {
 
 .newmessage {
-overflow: hidden;
-}
+    margin : 5px; }
+
 .newmessage_container {
-width : 700px;
-max-width: 1300px;
-max-width: var(--large-width);
-margin : 50px auto; }
+    margin : 15rem;
+    margin-top:7rem;
+    padding-top:35px;}
 
+.newmessage_container .newmessage_form {
+    padding-top:20px;
 }
 
-  
+.newmessage_container h1 {
+    margin-left:1rem;
+    font-size : 25px; 
+    letter-spacing: 3px; }
+
+}
+ 
+ /* 큰 화면 전용 설정 */
+@media (min-width: 1025px) {
+.newmessage {
+    margin : 5px; }
+
+.newmessage_container {
+    margin : 20rem;
+    margin-top:7rem;
+    padding-top:35px; }
+
+.newmessage_container .newmessage_form {
+    padding-top:40px;
+    margin-left:60px;
+    margin-right:60px; }
+
+.newmessage_container h1 {
+    font-size : 1.5rem; 
+    letter-spacing: 0.2rem;
+    text-align:left;
+    margin-left:4rem; }
+}
+
+@font-face {
+    font-family: 'Daehan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Daehan.woff') format('woff');
+    font-weight: normal;
+    font-style: normal; }

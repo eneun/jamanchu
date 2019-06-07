@@ -1,14 +1,30 @@
+@charset "UTF-8";
+
+:root {
+    --main-color: #6E37FF;
+    --yellow-color: #F9DC2A;
+    --light-color: #AD58F7;
+    --white-color: #fff;
+    --orange-color: #FFA650;
+    --large-width: 1300px;
+    --brown-color: #3A3727;
+    --gray-color: #ddd;
+    --black-color: #000;
+}
+
 .loginpage {
     width: 360px;
-    padding: 8% 0 0;
+    padding: 6% 0 0;
     margin: auto;
   }
-  img {
-    width: 200px;
+
+  /* je */
+  .login_logo {
+    width: 110px;
     height: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 1.3rem;
   }
-  
+
   .loginpage_container {
     position: relative;
     z-index: 1;
@@ -19,8 +35,8 @@
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   }
+
   .loginpage_container input {
-    font-family: "Roboto", sans-serif;
     outline: 0;
     background: #f2f2f2;
     width: 100%;
@@ -30,6 +46,7 @@
     box-sizing: border-box;
     font-size: 14px;
   }
+/* je */
   .loginpage_container input[type="submit"] {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
@@ -40,24 +57,47 @@
     padding: 15px;
     color: #FFFFFF;
     font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: 600;
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
   }
-  .loginpage_container button:hover,.form button:active,.form button:focus {
-    background: #F9DC2A;
+ /* je */
+  .loginpage_container input[type="submit"]:hover,.form button:active,.form button:focus {
+    background-color: #F9DC2A;
+    color: var(--brown-color);
+    letter-spacing: 3px;
+    font-weight: 600;
   }
+
   .loginpage_container .message {
+    text-decoration: underline;
     margin: 15px 0 0;
     color: #6E37FF;
     font-size: 12px;
   }
+
+  /* je */
   .loginpage_container .message a {
     color: #6E37FF;
     text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
   }
+
   .loginpage_container .register-form {
     display: none;
+  }
+  
+  /* je */
+  .alert-danger{
+    font-size: 12.5px;
+    font-family: 'Daehan';
+    font-weight: 600;
+    line-height: 6px;
+    height: 2rem;
   }
   
   <!--
@@ -105,17 +145,31 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;      
   }
-  
+  @font-face {
+    font-family: 'Daehan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Daehan.woff') format('woff');
+    font-weight: normal;
+    font-style: normal; 
+}
   
   /* 작은 화면 전용 설정 */
    @media (max-width: 767px) {
   
   .loginpage {
-   width : 280px;}
+   width : 300px;}
   
    .loginpage_container {
    padding-left : 25px;
    padding-right : 25px; }
   
-  
+   /* je */
+  .alert-danger{
+    font-size: 11.5px;
+  }
+  /* je */
+  .login_logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1.3rem;
+  }
    }

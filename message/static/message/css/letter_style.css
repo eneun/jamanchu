@@ -1,227 +1,125 @@
 @charset "UTF-8";
-/**/
-
-/* 기본색 */
-:root {
-  --main-color: #6E37FF;
-  --yellow-color: #F9DC2A;
-  --light-color: #AD58F7;
-  --white-color: #fff;
-  --orange-color: #FFA650;
-  --large-width: 1300px;
-  --brown-color: #3A3727;
-  --black-color: #000;
-  --gray-color: #888;
-}
-
 
 .letter {
- overflow: hidden;
- margin : auto;
- /* 메시지 보내기 공간 위해 추가 */
- margin-bottom: 4rem;
- }
-
+    overflow: hidden;
+    margin : auto;
+    margin-bottom: 4rem; }
 
 .letter_container {
-    width : 700px;
-    padding : 20px; 
     border : hidden 1px black;
-    border : hidden 1px var(--gray-color); 
-    margin-left : 5px;
-    margin-right : 5px;
-    padding : 10px;
-    padding-left : 15px;
-    padding-right : 15px; 
+    border : hidden 1px var(--gray-color);
     display : block;
     color : inherit;
     text-decoration : none;
-    position : relative;
-    margin : 20px;
-    padding : 15px;
+    position : relative; 
+    margin-bottom: 8rem;
 }
 
-
-
+.letter_container_title {
+    font-size: 1.5rem;
+    font-family: 'Daehan';
+    margin-top: 1rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
 
 .recv {
-position : left;
-margin-right : 300px; 
-padding : auto; 
-background : #ffde7b;
-padding : 15px;
-padding-left : 25px;
-padding-right : 25px;
-/* box-shadow : 3px 3px 1px 1px rgba(0,0,0,0.2); */
--webkit-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.2);
--moz-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.2);
-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.2);
-border-radius: 10px;
-margin-bottom: 2rem;
-}
+    -webkit-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background : #ffde7b; }
 
-.sent{
-position : right;
-margin-left : 300px;
-padding : auto; 
-background : #875aff;
-padding : 15px;
-padding-left : 25px;
-padding-right : 25px;
-/* box-shadow : 3px 3px 1px 1px rgba(0,0,0,0.2); */
--webkit-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.2);
--moz-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.2);
-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.2);
-border-radius: 10px; 
-margin-bottom: 2rem;
-}
-
-.letter h1 {
-text-align : center;
-padding-top : 60px;
-padding-bottom : 5px;
-font-size : 40px; 
-font-family: 'East Sea Dokdo', cursive; }
+.sent {
+    -webkit-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background : #875aff; }
 
 .letter_container h1 {
-text-align : left;
-padding-left : 30px;
-padding-bottom : 5px;
-font-size : 30px; 
-font-family: 'East Sea Dokdo', cursive; }
+    text-align : center;
+    padding-top : 10px;
+    padding-bottom : 20px;
+    font-size : 35px; 
+    font-family:'Daehan'; }
 
 .recv h2 {
-font-weight : bold;
-text-align : left;
-font-size : 20px;
-font-family: 'Nanum Gothic', sans-serif;
-padding-bottom : 5px;
-margin-top : 3px;
-margin-bottom: 10px;
-line-height: 1.5;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
+    font-weight : bold;
+    text-align : left;
+    font-size : 20px;
+    font-family:'Daehan';
+    padding-bottom : 5px;
+    margin-top : 3px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .sent h2 {
-font-weight : bold;
-text-align : right;
-color : #ffffff;
-font-size : 20px;
-font-family: 'Nanum Gothic', sans-serif,  #FFFFFF;
-padding-bottom : 5px;
-margin-top : 3px;
-margin-bottom: 10px;
-line-height: 1.5;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
-}
+    font-weight : bold;
+    text-align : right;
+    color : #ffffff;
+    font-size : 20px;
+    font-family:'Daehan',  #FFFFFF;
+    padding-bottom : 5px;
+    margin-top : 3px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
 
 .letter_container h3 {
-font-size : 15px; 
-font-family: 'Nanum Gothic', sans-serif; 
-margin-top: 10px;
-margin-bottom: 5px;
-padding-left : 1px;
-max-height: 30px auto;
-line-height: 1.5;
-white-space: normal;
-overflow: hidden;
-word-break:break-all;}
+    font-size : 15px; 
+    font-family:'Daehan';
+    margin-top: 7px;
+    margin-bottom: 3px;
+    padding-left : 1px;
+    max-height: 30px auto;
+    line-height: 1.5;
+    white-space: normal;
+    overflow: hidden;
+    word-break:break-all;}
 
 .sent h3 {
-color : white;}
+    color : white;}
 
 .letter_container h4 {
-text-align : right;
-font-size : 10px;  
-opacity : 0.6; 
-font-family: 'Nanum Gothic', sans-serif; 
-margin-bottom: 5px;
-padding-left : 1px;
-line-height: 15px;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis; }
+    text-align : right;
+    font-size : 10px; 
+    font-family:'Daehan'; 
+    margin-bottom: 5px;
+    padding-left : 1px;
+    line-height: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
 
 .sent h4 {
-color : #ffffff;}
+    color : #ffffff;}
 
-
-
-
-
-/* 작은 화면 전용 설정 */
- @media (max-width: 767px) {
-
- .letter_container {
- width : 320px;
- margin : auto;
- padding : 3px;}
-
-
-
-.letter_container h3 {
-font-size : 15px;  }
-
- .recv {
- max-width : 300px;
- margin-right : 10px;
- position : relative;}
-
- .sent {
- max-width : 300px;
- position : relative;
- margin-left : 70px;}
- }
-
-
- 
- /* 큰 화면 전용 설정 */
-@media (min-width: 768px) {
-
-  .recv {
- max-width : 500px;
- margin-right : 10px;
- position : relative;
-}
-
- .sent {
- max-width : 500px;
- position : relative;
- margin-left : 160px;}
-
- .letter_container {
- max-width : 770px;
- max-width: var(--large-width);
- margin : 50px auto; }
- }  
-
-
-
- /* 예은 */
 .add_section {
     background: var(--main-color);
     padding: 3px;
     width: 100%;
     position: fixed;
-    bottom: 0;
-}
-.addmessage_form{
-    margin-bottom: 0;
-}
+    bottom: 0; }
+
+.addmessage_form {
+    margin-bottom: 0; }
+
 .message_content {
     height: 3rem;
-    border-radius: 10px;
-}
-.send_button button{
+    border-radius: 10px; }
+
+.send_button button {
     border-radius: 10px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     width: 4rem;
-    height: 4rem;
     font-size: 2rem;
     letter-spacing: 5px;
     border-color: var(--main-color);
@@ -232,10 +130,201 @@ font-size : 15px;  }
     text-align: center;
     line-height: 1.5rem;
     color: var(--main-color);
+    height: 62px;
  }
  
- .send_button button:hover{
+ .send_button button:hover {
      border-color: var(--yellow-color);
      background-color: var(--yellow-color);
-     color: var(--white-color);
+     color: var(--white-color); }
+
+
+
+
+/* 작은 화면 전용 설정 */
+ @media (max-width: 767px) {
+
+.letter_container {
+    margin-left : 5px;
+    margin-right : 5px;
+    padding : 10px;
+    padding-left : 15px;
+    padding-right : 15px; 
+}
+
+.recv {
+    width:65%;
+    padding-top:5px;
+    padding-left : 20px;
+    padding-right : 20px;
+    margin-bottom: 1rem;
+    max-width : 300px;
+    height:80px; }
+
+.sent {
+    width:65%;
+    padding-top:5px;
+    padding-left : 20px;
+    padding-right : 20px;
+    margin-bottom: 1rem;
+    margin-left:120px;
+    max-width : 300px;
+    height:80px; }
+
+.letter_container h1 {
+    font-size : 35px; }
+
+.recv h2 {
+    font-size : 20px;
+    line-height: 1.5; }
+
+.sent h2 {
+    font-size : 20px;
+    line-height: 1.5; }
+
+.letter_container h3 {
+    font-size : 15px; 
+    max-height: 30px auto;
+    line-height: 1.5; }
+
+.sent h3 {
+    color : white;}
+
+.letter_container h4 {
+    font-size : 10px;  
+    line-height: 15px; }
+
+.sent h4 {
+    color : #ffffff;}
+}
+
+/* 중간 화면 전용 설정 */
+@media (min-width: 768px) and (max-width: 1024px) {
+ 
+.letter_container {
+    margin-left : 180px;
+    margin-right : 180px;
+    padding : 15px;
+    padding-left : 15px;
+    padding-right : 15px; 
+    margin-bottom: 8rem;
+}
+
+.recv {
+    width:85%;
+    padding-top:10px;
+    padding-left : 20px;
+    padding-right : 20px;
+    margin-bottom: 1.5rem;
+    max-width : 500px;
+    height:100px; }
+
+.sent {
+    width:85%;
+    padding-top:10px;
+    padding-left : 20px;
+    padding-right : 20px;
+    margin-bottom: 1.5rem;
+    margin-left:120px;
+    max-width : 500px;
+    height:100px; }
+    
+.recv h2 {
+    font-size : 20px;
+    line-height: 1.5; }
+
+.sent h2 {
+    font-size : 20px;
+    line-height: 1.5; }
+
+.letter_container h3 {
+    font-size : 17px; 
+    max-height: 30px auto;
+    line-height: 1.5; }
+
+.sent h3 {
+    color : white;}
+
+.letter_container h4 {
+    font-size : 10px;  
+    line-height: 15px; }
+
+.sent h4 {
+    color : #ffffff;}
+
+.input-group {
+    height:8rem; }
+
+.send_button button {
+    height: 8rem; }
+}
+
+
+ 
+ /* 큰 화면 전용 설정 */
+ @media (min-width: 1025px) {
+
+.letter_container {
+    margin-left : 350px;
+    margin-right : 350px;
+    padding : 10px;
+    padding-left : 15px;
+    padding-right : 15px; 
+}
+
+.recv {
+    width:100%;
+    padding-top:10px;
+    padding-left : 20px;
+    padding-right : 20px;
+    margin-bottom: 1.5rem;
+    max-width : 500px;
+    height:100px; }
+
+.sent {
+    width:100%;
+    padding-top:10px;
+    padding-left : 20px;
+    padding-right : 20px;
+    margin-bottom: 1.5rem;
+    margin-left:170px;
+    max-width : 500px;
+    height:100px; }
+
+.recv h2 {
+    font-size : 20px;
+    line-height: 1.5; }
+
+.sent h2 {
+    font-size : 20px;
+    line-height: 1.5; }
+
+.letter_container h3 {
+    font-size : 20px; 
+    max-height: 30px auto;
+    line-height: 1.5; }
+
+.sent h3 {
+    color : white;}
+
+.letter_container h4 {
+    font-size : 13px;  
+    line-height: 15px; }
+
+.sent h4 {
+    color : #ffffff;}
+
+.input-group {
+    height:8rem; }
+
+.send_button button{
+    width: 4rem;
+    height: 8rem; }
+
  }
+
+@font-face {
+    font-family: 'Daehan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Daehan.woff') format('woff');
+    font-weight: normal;
+    font-style: normal; }

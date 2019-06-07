@@ -63,4 +63,4 @@ def create(request, meeting_id):
         #     return HttpResponseRedirect('/')
     else:
         form = MessageForm()
-        return render(request, 'message/new.html', {'form': form})
+        return render(request, 'message/new.html', {'form': form, 'meeting': meeting})
