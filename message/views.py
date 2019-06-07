@@ -11,6 +11,8 @@ def listmessage(request):
     return render(request, 'message/listmessage.html', {'messages': messages})
 
 def show(request, message_id):
+    if not request.user.is_authenticated:
+        return redirect('login')
     message = get_object_or_404(Message, pk=message_id)
     messages = Message.objects.filter(sender=message.sender, receiver=message.receiver) | Message.objects.filter(sender=message.receiver, receiver=message.sender).order_by('-created_at')
     messages = messages.filter(meeting=message.meeting)
@@ -20,6 +22,8 @@ def show(request, message_id):
     return render(request, 'message/show.html', {'messages': messages, 'form': form})
 
 def add(request, message_id):
+    if not request.user.is_authenticated:
+        return redirect('login')
     message = get_object_or_404(Message, pk=message_id)
     # 누구와 주고받는 메시지인가를 찾아서 receiver 변수에 저장 
     if message.sender == request.user:
@@ -45,6 +49,8 @@ def add(request, message_id):
         return redirect('show', message_id=message.pk)
 
 def new(request, meeting_id):
+    if not request.user.is_authenticated:
+        return redirect('login')
     meeting = get_object_or_404(Meeting, pk=meeting_id)
     return render(request, 'message/new.html')
 
