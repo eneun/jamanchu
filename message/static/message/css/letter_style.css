@@ -14,7 +14,7 @@
     position : relative; 
     margin-bottom: 8rem;
 }
-
+ 
 .letter_container_title {
     font-size: 1.5rem;
     font-family: 'Daehan';
@@ -109,37 +109,37 @@
     bottom: 0; }
 
 .addmessage_form {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    margin-right:0px;
+    padding-right:0px; }
 
 .message_content {
     height: 3rem;
     border-radius: 10px; }
 
 .send_button button {
-    border-radius: 10px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    width: 4rem;
-    font-size: 2rem;
-    letter-spacing: 5px;
-    border-color: var(--main-color);
-    border-width: 2px;
-    border-style: solid;
-    background-color: #fff;
-    font-weight: bold;
-    text-align: center;
-    line-height: 1.5rem;
-    color: var(--main-color);
-    height: 62px;
+    font-family: "Daehan";
+    text-transform: uppercase;
+    outline: 0;
+    background: #6E37FF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    letter-spacing: 10px;
+    font-weight: 600;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
  }
  
- .send_button button:hover {
-     border-color: var(--yellow-color);
-     background-color: var(--yellow-color);
-     color: var(--white-color); }
-
-
-
+ .send_button button:hover, .send_button button:active, .send_button button:focus {
+    background-color: #F9DC2A;
+    color: var(--brown-color);
+    letter-spacing: 10px;
+    font-weight: 600;
+ }
 
 /* 작은 화면 전용 설정 */
  @media (max-width: 767px) {
@@ -196,6 +196,13 @@
 
 .sent h4 {
     color : #ffffff;}
+
+
+.send_button button {
+    height: 4rem;
+    padding-right: 5px;
+    padding-left: 1rem;
+    font-size: 1.5rem; }
 }
 
 /* 중간 화면 전용 설정 */
@@ -256,6 +263,9 @@
     height:8rem; }
 
 .send_button button {
+    padding-right: 0.9rem;
+    padding-left: 1.5rem;
+    font-size: 2rem;
     height: 8rem; }
 }
 
@@ -318,7 +328,11 @@
     height:8rem; }
 
 .send_button button{
-    width: 4rem;
+    padding-right: 2rem;
+    padding-left: 1.7rem;
+    font-size: 2rem;
+    height: 8rem;
+    width: 5rem;
     height: 8rem; }
 
  }

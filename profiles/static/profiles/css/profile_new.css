@@ -80,27 +80,31 @@ label{
   height: 430px;
 }
 
-.saveButton{
-  text-align: center;
-  background-color: 663eff;
-  background-color: var(--main-color);
-  border: none;
-  color: white;
-  padding: 0.8rem;
-  font-size: 17px;
-  letter-spacing: 7px;
+.newprofile_container button[type="submit"] {
+  font-family: "Daehan";
+  text-transform: uppercase;
+  outline: 0;
+  background: #6E37FF;
   width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  letter-spacing: 5px;
   font-weight: 600;
-  border-radius: .3rem;
-  padding-top:1rem;
-  padding-bottom: 1rem;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
 }
-
-.saveButton:hover{
-  border-color: var(--yellow-color);
-  background-color: var(--yellow-color);
-  color: var(--brown-color);  
-}
+ 
+.newprofile_container button[type="submit"]:hover, 
+.newprofile_container button[type="submit"]:active, 
+.newprofile_container button[type="submit"]:focus{
+  background-color: #F9DC2A;
+  color: var(--brown-color);
+  letter-spacing: 5px;
+  font-weight: 600;
+} 
 
 textarea.form-control {
   margin-top: 0px;

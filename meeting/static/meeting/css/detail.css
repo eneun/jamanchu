@@ -1,4 +1,3 @@
-/* for desktop */
 body {
     background-color: #f3f3f3;
 }
@@ -51,24 +50,8 @@ body {
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Daehan.woff') format('woff');
     font-weight: normal;
 }
-@media (max-width: 767px) {
-    .detail_section {
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
-    .title_zone {
-        display: block!important;
-        justify-content: none;
-    }
-    .title {
-        float: none;
-        font-size: 24px;
-    }
-    .created_at {
-        float: none;
-        font-size: 16px;
-    }
-}
+
+
 .content_zone {
     margin-bottom: 3rem;
 }
@@ -84,32 +67,9 @@ body {
     padding-bottom: 8px;
     border-bottom: 3px solid #ffef89;
 }
-.profile_content {
-}
 .button_zone{
     display: none;
 }
-@media(min-width: 768px) {
-    .button_zone {
-        width: 100%;
-        display: inline-flex;
-    }
-    .detail_button {
-        width: 50%;
-        padding: 1.1rem;
-        text-align: center;
-        background-color: var(--main-color);
-        color: white;
-        border-right: 0.5px solid white;
-        font-family: 'Nanum Gothic', sans-serif;
-        font-size: 1.2rem;
-        letter-spacing: 4px;
-    }
-    .detail_button:hover {
-        color: white
-    }
-}
-
 
 .btn-group {
     position: fixed;
@@ -117,6 +77,7 @@ body {
     left: 0;
     z-index: 100;
     width: 100%;
+    text-align:center;
 }
 .btn-group a {
     width: 100%;
@@ -130,27 +91,142 @@ body {
     border-top-style: double;
     border-color: var(--gray-color);
     padding: 1.1rem;
-    font-family: 'Nanum Gothic', sans-serif;
-    text-align: center;
-    font-size: 1rem;
-    letter-spacing: 4px;
-    font-weight: bold;
-    background-color: var(--main-color);
-    color: var(--white-color);
+    font-family: "Daehan";
+    text-transform: uppercase;
+    outline: 0;
+    background:#6E37FF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 16px;
+    letter-spacing: 10px;
+    font-weight: 600;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
 }
 
-.btn-group button:hover {
-    background-color: var(--yellow-color);
-    color: var(--black-color);
+.button_zone a:hover, .button_zone a:active, .button_zone a:focus {
+    text-decoration: none;
+    background-color: #F9DC2A;
+    color: var(--brown-color);
+    letter-spacing: 10px;
+    font-weight: 600; }
+
+@media (max-width: 767px) {
+    .detail_section {
+        margin-top: 7rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .title_zone {
+        display: block!important;
+        justify-content: none;
+    }
+    .title {
+        float: none;
+        font-size: 24px;
+    }
+    .created_at {
+        float: none;
+        font-size: 16px;
+    }
+    .btn-group a {
+        font-size: 16px;
+        letter-spacing: 5px;
+        height:5rem;
+        padding-top:1.8rem;
+    }
+    .btn-group a:hover, .btn-group a:active, .btn-group a:focus {
+        text-decoration: none;
+        background-color: #F9DC2A;
+        color: var(--brown-color);
+        letter-spacing: 5px;
+        font-weight: 600;
+    }
+    a.detail_button {
+        border-right: 1px solid white;
+    }
 }
-@media (min-width: 768px) {
+
+/* 중간 화면 전용 설정 */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .detail_section {
+        margin-top: 8.5rem;
+        margin-left: 10rem;
+        margin-right: 10rem;
+    }
+    .title_zone {
+        display: block!important;
+        justify-content: none;
+    }
+    .title {
+        float: none;
+        font-size: 24px;
+    }
+    .created_at {
+        float: none;
+        font-size: 16px;
+    }
+    .btn-group a {
+        font-size: 20px;
+        letter-spacing: 7px;
+        height:5rem;
+        padding-top:1.5rem;
+    }
+
+    .btn-group a:hover, .btn-group a:active, .btn-group a:focus {
+        text-decoration: none;
+        background-color: #F9DC2A;
+        color: var(--brown-color);
+        letter-spacing: 7px;
+        font-weight: 600;
+    }
+    a.detail_button {
+        border-right: 1px solid white;
+    }
+}
+
+ /* 큰 화면 전용 설정 */
+ @media (min-width: 1025px) {
+    .detail_section {
+        margin-top: 8.5rem;
+        margin-left: 25rem;
+        margin-right: 25rem;
+        min-height:30rem;
+    }
+    .user_zone {
+        margin-bottom:8rem;
+    }
+    .button_zone {
+        width: 100%;
+        display: inline-flex;
+    }
+    .detail_button {
+        text-align:center;
+        font-family: "Daehan";
+        text-transform: uppercase;
+        outline: 0;
+        background: #6E37FF;
+        width: 100%;
+        border: 0;
+        border-right: 1px solid white;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 16px;
+        letter-spacing: 10px;
+        font-weight: 600;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer; }
+        
     .btn-group {
         display: none;
     }
-} 
-a:hover {
-    text-decoration: none;
-} 
+}
+
+
 
 @font-face {
     font-family: 'Daehan';

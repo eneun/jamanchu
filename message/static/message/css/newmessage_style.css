@@ -38,15 +38,31 @@ textarea.form-control {
     padding-top : 25px;
     letter-spacing: 2px; }
 
-.filterbtn {
-    background-color: 663eff;
-    background-color: var(--main-color);
-    border: none;
-    color: white;
-    padding: 0.8rem;
-    font-size: 1.1rem;
+.newmessage_container button[type="submit"] {
+    font-family: "Daehan";
+    text-transform: uppercase;
+    outline: 0;
+    background: #6E37FF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 16px;
     letter-spacing: 10px;
+    font-weight: 600;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
 }
+
+.newmessage_container button[type="submit"]:hover, 
+.newmessage_container button[type="submit"]:active, 
+.newmessage_container button[type="submit"]:focus{
+    background-color: #F9DC2A;
+    color: var(--brown-color);
+    letter-spacing: 10px;
+    font-weight: 600;
+} 
 
 
 /* 작은 화면 전용 설정 */
