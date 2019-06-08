@@ -12,7 +12,8 @@
     <i class="far fa-envelope"></i> 쪽지함
 </div>
     {% for message in messages %}
-        {% ifchanged message.sender or message.receiver or message.meeting %}
+        {% comment %} {% ifchanged message.sender or message.receiver or message.meeting %} {% endcomment %}
+        {% ifchanged message.meeting or message.sender or message.receiver %}
         <div class="card">
             <a href="{% url 'showmessage' message.id %}">
                 <div class="simple_info">
