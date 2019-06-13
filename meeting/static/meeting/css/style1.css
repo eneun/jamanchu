@@ -209,7 +209,7 @@ body {
     min-height: 100vh;
     margin-top: 65px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .meeting_container {
         margin-left: 13rem;
         margin-right: 13rem;
@@ -217,6 +217,13 @@ body {
     }
 }
 @media (max-width: 767px) {
+    .meeting_container {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        padding-bottom: 4rem;
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
     .meeting_container {
         margin-left: 0.5rem;
         margin-right: 0.5rem;

@@ -155,3 +155,12 @@ textarea.form-control {
     font-size: 1.1rem;
     letter-spacing: 10px;
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .newprofile_container {
+    width: 100%;
+  }
+  .newprofile {
+    margin: 6rem;
+  }
+}

@@ -129,6 +129,11 @@ textarea.form-control {
     margin-left:4rem; }
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+    .newmessage_container {
+        margin: 5rem;
+    }
+}
 @font-face {
     font-family: 'Daehan';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Daehan.woff') format('woff');

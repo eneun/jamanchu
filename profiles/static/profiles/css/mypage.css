@@ -157,3 +157,9 @@ h2{
    text-align: center !important;
    font-size: 3rem;
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+   .content {
+      width: 120%;
+   }
+}
